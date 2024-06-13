@@ -21,6 +21,8 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 alias vim='nvim'
 alias lg='lazygit'
 
+export EDITOR='nvim'
+
 # case-sensitive completion.
 # CASE_SENSITIVE="true"
 

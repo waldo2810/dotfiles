@@ -124,3 +124,5 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 
 alias vim='nvim'
 alias lg='lazygit'
+
+export EDITOR="nvim"
