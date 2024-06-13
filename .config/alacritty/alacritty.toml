@@ -6,9 +6,12 @@ import = [
 program = "/bin/zsh"
 
 [window]
-opacity = 0.9
+# opacity = 0.9
 padding = { x = 10, y = 10 }
 decorations = "None"
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font" }
+# normal = { family = "JetBrainsMono Nerd Font" }
+# normal = { family = "MesloLGLDZ Nerd Font" }
+normal = { family = "Ubuntu Mono" }
+# size = 10
