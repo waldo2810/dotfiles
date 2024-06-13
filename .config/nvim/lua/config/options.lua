@@ -1,7 +1,9 @@
 vim.g.mapleader = " " -- change leader to a space
 vim.g.maplocalleader = " " -- change localleader to a space
 
-vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 vim.g.have_nerd_font = false
 vim.opt.number = true
