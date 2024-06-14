@@ -1,4 +1,7 @@
-font pango: "JetBrainsMono Nerd Font" Normal 10
+default_border none
+default_floating_border none
+titlebar_padding 1
+titlebar_border_thickness 0
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
