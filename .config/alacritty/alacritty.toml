@@ -6,12 +6,17 @@ import = [
 program = "/bin/zsh"
 
 [window]
-# opacity = 0.9
-padding = { x = 10, y = 10 }
-decorations = "None"
+opacity = 0.98
+padding = { x = 5, y = 5 }
+# decorations = "None"
 
 [font]
-# normal = { family = "JetBrainsMono Nerd Font" }
+size = 10
+normal = { family = "JetBrainsMono Nerd Font" }
 # normal = { family = "MesloLGLDZ Nerd Font" }
-normal = { family = "Ubuntu Mono" }
-# size = 10
+# normal = { family = "Ubuntu Mono" }
+
+[keyboard]
+bindings = [
+    { key="F11", action="ToggleFullscreen" }
+]
