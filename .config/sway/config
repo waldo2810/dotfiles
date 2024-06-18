@@ -43,6 +43,11 @@ output * bg /home/wasabi/Pictures/kanagawa.jpg fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+    input type:keyboard {
+        xkb_layout us,es
+        xkb_options grp:win_space_toggle
+    }
+
     input "1267:12448:ELAN0708:00_04F3:30A0_Touchpad" {
         dwt enabled
         tap enabled
