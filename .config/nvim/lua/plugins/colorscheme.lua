@@ -1,50 +1,41 @@
--- transparent background
--- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'Terminal', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'FoldColumn', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'Folded', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
---
--- -- transparent background for neotree
--- vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NeoTreeVertSplit', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NeoTreeWinSeparator', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NeoTreeEndOfBuffer', { bg = 'none' })
---
--- -- transparent background for nvim-tree
--- vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NvimTreeVertSplit', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NvimTreeEndOfBuffer', { bg = 'none' })
-
 return {
     {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function ()
-            require("rose-pine").setup({
-                dark_variant = "main", -- main, moon, or dawn
-                styles = {
-                    bold = true,
-                    italic = false,
-                    transparency = true,
-                },
-                highlight_groups = {
-                    -- Comment = { fg = "foam" },
-                    -- VertSplit = { fg = "muted", bg = "muted" },
-                },
+        'maxmx03/solarized.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('solarized').setup({
+                theme = 'neo',
+                transparent = true,
             })
-
-            vim.cmd("colorscheme rose-pine")
-            -- vim.cmd("colorscheme rose-pine-main")
-            -- vim.cmd("colorscheme rose-pine-moon")
-            -- vim.cmd("colorscheme rose-pine-dawn")
-        end
+            -- vim.o.background = 'dark' -- or 'light'
+            vim.o.background = 'light' -- or 'light'
+            vim.cmd.colorscheme 'solarized'
+        end,
     },
+    -- {
+    --     "rose-pine/neovim",
+    --     name = "rose-pine",
+    --     config = function ()
+    --         require("rose-pine").setup({
+    --             dark_variant = "main", -- main, moon, or dawn
+    --             styles = {
+    --                 bold = true,
+    --                 italic = false,
+    --                 transparency = true,
+    --             },
+    --             highlight_groups = {
+    --                 -- Comment = { fg = "foam" },
+    --                 -- VertSplit = { fg = "muted", bg = "muted" },
+    --             },
+    --         })
+    --
+    --         vim.cmd("colorscheme rose-pine")
+    --         -- vim.cmd("colorscheme rose-pine-main")
+    --         -- vim.cmd("colorscheme rose-pine-moon")
+    --         -- vim.cmd("colorscheme rose-pine-dawn")
+    --     end
+    -- },
     -- {
     --     "rebelot/kanagawa.nvim",
     --     priority = 1000,
