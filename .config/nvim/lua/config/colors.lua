@@ -1,0 +1,46 @@
+-- transparent background
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Terminal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'FoldColumn', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Folded', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
+
+-- transparent background for neotree
+vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NeoTreeVertSplit', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NeoTreeWinSeparator', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NeoTreeEndOfBuffer', { bg = 'none' })
+
+-- transparent background for nvim-tree
+vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NvimTreeVertSplit', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NvimTreeEndOfBuffer', { bg = 'none' })
+
+-- Main highlights
+-- vim.api.nvim_set_hl(0, "ErrorMsg", { fg = 'WHITE', bg = 'RED' })
+-- vim.api.nvim_set_hl(0, "WarningMsg", { fg = 'WHITE', bg = 'RED' })
+-- vim.api.nvim_set_hl(0, "Float", { fg = 'MAGENTA' })
+-- vim.api.nvim_set_hl(0, "Function", { fg = 'CYAN', bg = 'none', bold = true })
+-- vim.api.nvim_set_hl(0, "Identifier", { fg = 'GREEN', italic = true })
+-- vim.api.nvim_set_hl(0, "Keyword", { fg = 'YELLOW' })
+-- vim.api.nvim_set_hl(0, "Label", { fg = 'YELLOW' })
+-- vim.api.nvim_set_hl(0, "Number", { fg = 'MAGENTA' })
+-- vim.api.nvim_set_hl(0, "Operator", { fg = 'RED' })
+-- vim.api.nvim_set_hl(0, "PreProc", { fg = 'MAGENTA' })
+-- vim.api.nvim_set_hl(0, "Special", { fg = 'WHITE' })
+-- vim.api.nvim_set_hl(0, "Statement", { fg = 'RED' })
+-- vim.api.nvim_set_hl(0, "StorageClass", { fg = 'GREEN', italic = true })
+-- vim.api.nvim_set_hl(0, "String", { fg = 'LIGHTGREEN' })
+-- vim.api.nvim_set_hl(0, "Tag", { fg = 'CYAN' })
+-- vim.api.nvim_set_hl(0, "Title", { fg = 'WHITE', bold = true })
+-- vim.api.nvim_set_hl(0, "Todo", { bg = 'MAGENTA', bold = true })
+-- vim.api.nvim_set_hl(0, "Type", { fg = 'GREEN' })
+-- vim.api.nvim_set_hl(0, "Underlined", { underline = true })
+
+-- vim.api.nvim_set_hl(0, "SpecialKey", { fg = 'darker_gray', bg = 'BLACK' })
+-- vim.api.nvim_set_hl(0, "NonText", { fg = 'darker_gray', bg = 'BLACK' })
