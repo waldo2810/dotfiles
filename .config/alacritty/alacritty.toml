@@ -18,10 +18,11 @@ padding = { x = 5, y = 5 }
 # decorations = "None"
 
 [font]
-size = 10
+# size = 10
 # normal = { family = "JetBrainsMono Nerd Font" }
-normal = { family = "MesloLGL Nerd Font" }
+# normal = { family = "MesloLGL Nerd Font" }
 # normal = { family = "Ubuntu Mono" }
+normal = { family = "Iosevka Nerd Font" }
 
 [keyboard]
 bindings = [
