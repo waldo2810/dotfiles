@@ -3,6 +3,10 @@ default_floating_border none
 titlebar_padding 1
 titlebar_border_thickness 0
 
+gaps inner 8
+
+font pango:Iosevka Nerd Font regular 10
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 set $left h
