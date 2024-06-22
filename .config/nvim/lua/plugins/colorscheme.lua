@@ -8,8 +8,8 @@ return {
                 theme = 'neo',
                 transparent = true,
             })
-            -- vim.o.background = 'dark' -- or 'light'
-            vim.o.background = 'light' -- or 'light'
+            vim.o.background = 'dark' -- or 'light'
+            -- vim.o.background = 'light' -- or 'light'
             vim.cmd.colorscheme 'solarized'
         end,
     },
