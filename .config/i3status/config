@@ -16,6 +16,7 @@ general {
 # order += "disk /"
 # order += "load"
 order += "wireless _first_"
+order += "volume master"
 order += "battery all"
 order += "memory"
 order += "cpu_usage"
@@ -63,4 +64,8 @@ cpu_usage {
 tztime local {
         # format = "%Y-%m-%d %H:%M"
         format = "%a, %B %d %Y %H:%M"
+}
+
+volume master {
+    format = "VOL: %volume"
 }
