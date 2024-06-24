@@ -13,7 +13,9 @@ To ensure the directory exists, run:
     sudo mkdir -p /etc/X11/xorg.conf.d
 
 ### Touchpad
+
 [see reference](https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/)
+
 Next we’ll create a new file “90-touchpad.conf”. The configuration file names end with .conf and are read in ASCII order—by convention file names begin with two digits followed by a dash.
 
     sudo touch /etc/X11/xorg.conf.d/90-touchpad.conf
@@ -27,7 +29,7 @@ Now open up the file your editor of choice (with suitable write permission of co
             Option "Tapping" "on"
     EndSection
 
-Additional libinput options
+#### Additional libinput options
 Libinput support additional options beyond tapping, you can add and configure each one by adding them on new lines after Option "Tapping" "on" in your /etc/X11/xorg.conf.d/90-touchpad.conf, for example:
 
     Section "InputClass"
@@ -59,3 +61,8 @@ If this is your case consider using `/etc/X11/xorg.conf.d/00-keyboard.conf` (`ma
             Option "XkbLayout" "us,ru"
             Option "XkbOptions" "grp:alt_shift_toggle,grp_led:caps"
     EndSection
+
+### Multiple displays
+[see reference](https://github.com/phillipberndt/autorandr)
+
+Use `autorandr` to save multiple profile with display layout.
