@@ -127,3 +127,4 @@ alias vim='nvim'
 alias lg='lazygit'
 
 export EDITOR="nvim"
+. "$HOME/.cargo/env"
