@@ -25,7 +25,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 
 # Xautolock
-exec --no-startup-id xautolock -time 1 -detectsleep -locker "i3lock-fancy"
+exec --no-startup-id xautolock -time 5 -detectsleep -locker "i3lock-fancy"
 
 # Picom
 exec --no-startup-id picom
