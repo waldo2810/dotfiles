@@ -28,7 +28,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xautolock -time 5 -detectsleep -locker "i3lock-fancy"
 
 # Picom
-exec --no-startup-id picom
+exec_always --no-startup-id picom
 
 # wallpaper
 # exec "feh --bg-fill /home/wasabi/Pictures/solarized-dark.png"
