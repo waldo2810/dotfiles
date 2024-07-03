@@ -31,7 +31,8 @@ bindsym $mod+Delete exec --no-startup-id i3lock-fancy
 exec_always --no-startup-id picom
 
 # wallpaper
-exec "feh -z --bg-fill /home/wasabi/Pictures/wallpapers/uwu/"
+# exec "feh -z --bg-fill /home/wasabi/Pictures/wallpapers/uwu/"
+exec "feh --bg-fill /home/wasabi/Pictures/wallpapers/solarized-dark.png"
 
 # brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
