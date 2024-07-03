@@ -24,6 +24,8 @@ alias lg='lazygit'
 
 export EDITOR='nvim'
 
+alias screenshot='maim --select | xclip -selection clipboard -t image/png'
+
 # case-sensitive completion.
 # CASE_SENSITIVE="true"
 
