@@ -7,7 +7,7 @@ default_floating_border none
 gaps inner 5
 
 set $mod Mod4
-font pango:Iosevka Nerd Font 10
+font pango:JetBrainsMono Nerd Font 9
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -33,6 +33,10 @@ exec_always --no-startup-id picom
 # wallpaper
 # exec "feh -z --bg-fill /home/wasabi/Pictures/wallpapers/uwu/"
 exec "feh --bg-fill /home/wasabi/Pictures/wallpapers/solarized-dark.png"
+
+# keyboard layout
+exec_always "setxkbmap -layout us,es"
+exec_always "setxkbmap -option 'grp:win_space_toggle'"
 
 # brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
