@@ -56,22 +56,41 @@ return {
     --         vim.cmd("colorscheme kanagawa")
     --     end
     -- },
+    -- {
+    --     "ellisonleao/gruvbox.nvim",
+    --     priority = 1000,
+    --     config = function ()
+    --         require("gruvbox").setup({
+    --             italic = {
+    --                 strings = false,
+    --                 emphasis = true,
+    --                 comments = true,
+    --                 operators = false,
+    --                 folds = true,
+    --             },
+    --             contrast = "", -- can be "hard", "soft" or empty string
+    --             transparent_mode = true,
+    --         })
+    --         vim.cmd("colorscheme gruvbox")
+    --     end,
+    -- }
     {
-        "ellisonleao/gruvbox.nvim",
+        'jesseleite/nvim-noirbuddy',
+        dependencies = {
+            { 'tjdevries/colorbuddy.nvim' }
+        },
+        lazy = false,
         priority = 1000,
-        config = function ()
-            require("gruvbox").setup({
-                italic = {
-                    strings = false,
-                    emphasis = true,
-                    comments = true,
-                    operators = false,
-                    folds = true,
-                },
-                contrast = "", -- can be "hard", "soft" or empty string
-                transparent_mode = true,
-            })
-            vim.cmd("colorscheme gruvbox")
-        end,
-    }
+        opts = {
+            colors = {
+                background = '#000000'
+            }
+        },
+    },
+    -- {
+    --     'kdheepak/monochrome.nvim',
+    --     config = function()
+    --         vim.cmd 'colorscheme monochrome'
+    --     end
+    -- }
 }
