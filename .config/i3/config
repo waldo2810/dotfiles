@@ -35,7 +35,7 @@ exec_always --no-startup-id picom
 exec "feh --bg-fill /home/wasabi/Pictures/wallpapers/solarized-dark.png"
 
 # keyboard layout
-exec_always "setxkbmap -layout us,es"
+exec_always "setxkbmap -layout us,latam"
 exec_always "setxkbmap -option 'grp:win_space_toggle'"
 
 # brightness
