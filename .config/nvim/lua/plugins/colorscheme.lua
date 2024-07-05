@@ -1,18 +1,18 @@
 return {
-    {
-        'maxmx03/solarized.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require('solarized').setup({
-                theme = 'neo',
-                transparent = true,
-            })
-            vim.o.background = 'dark' -- or 'light'
-            -- vim.o.background = 'light' -- or 'light'
-            vim.cmd.colorscheme 'solarized'
-        end,
-    },
+    -- {
+    --     'maxmx03/solarized.nvim',
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         require('solarized').setup({
+    --             theme = 'neo',
+    --             transparent = true,
+    --         })
+    --         vim.o.background = 'dark' -- or 'light'
+    --         -- vim.o.background = 'light' -- or 'light'
+    --         vim.cmd.colorscheme 'solarized'
+    --     end,
+    -- },
     -- {
     --     "rose-pine/neovim",
     --     name = "rose-pine",
@@ -74,19 +74,19 @@ return {
     --         vim.cmd("colorscheme gruvbox")
     --     end,
     -- }
-    -- {
-    --     'jesseleite/nvim-noirbuddy',
-    --     dependencies = {
-    --         { 'tjdevries/colorbuddy.nvim' }
-    --     },
-    --     lazy = false,
-    --     priority = 1000,
-    --     opts = {
-    --         colors = {
-    --             background = '#000000'
-    --         }
-    --     },
-    -- },
+    {
+        'jesseleite/nvim-noirbuddy',
+        dependencies = {
+            { 'tjdevries/colorbuddy.nvim' }
+        },
+        lazy = false,
+        priority = 1000,
+        opts = {
+            colors = {
+                background = '#000000'
+            }
+        },
+    },
     -- {
     --     'kdheepak/monochrome.nvim',
     --     config = function()
