@@ -19,8 +19,8 @@ program = "/bin/zsh"
 
 [font]
 size = 8
-normal = { family = "JetBrainsMono Nerd Font" }
-# normal = { family = "MesloLGL Nerd Font" }
+# normal = { family = "JetBrainsMono Nerd Font" }
+normal = { family = "MesloLGL Nerd Font" }
 # normal = { family = "Ubuntu Mono" }
 # normal = { family = "Iosevka Nerd Font" }
 
