@@ -32,7 +32,7 @@ exec_always --no-startup-id picom
 
 # wallpaper
 # exec "feh -z --bg-fill /home/wasabi/Pictures/wallpapers/uwu/"
-exec "feh --bg-fill /home/wasabi/Pictures/wallpapers/solarized-dark.png"
+exec_always "feh --bg-fill /home/wasabi/Pictures/wallpapers/kanagawa.jpg"
 
 # keyboard layout
 exec_always "setxkbmap -layout us,latam"
