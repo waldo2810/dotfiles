@@ -74,19 +74,19 @@ return {
     --         vim.cmd("colorscheme gruvbox")
     --     end,
     -- }
-    {
-        'jesseleite/nvim-noirbuddy',
-        dependencies = {
-            { 'tjdevries/colorbuddy.nvim' }
-        },
-        lazy = false,
-        priority = 1000,
-        opts = {
-            colors = {
-                background = '#000000'
-            }
-        },
-    },
+    -- {
+    --     'jesseleite/nvim-noirbuddy',
+    --     dependencies = {
+    --         { 'tjdevries/colorbuddy.nvim' }
+    --     },
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {
+    --         colors = {
+    --             background = '#000000'
+    --         }
+    --     },
+    -- },
     -- {
     --     'kdheepak/monochrome.nvim',
     --     config = function()
