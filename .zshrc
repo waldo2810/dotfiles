@@ -26,6 +26,8 @@ export EDITOR='nvim'
 
 alias screenshot='maim --select | xclip -selection clipboard -t image/png'
 
+alias air='~/.air'
+
 # case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -76,3 +78,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+# Turso
+export PATH="$PATH:/home/wasabi/.turso"
