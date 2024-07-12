@@ -1,4 +1,5 @@
 vim.g.mapleader = " " -- change leader to a space
+vim.opt.guicursor = ""
 vim.g.maplocalleader = " " -- change localleader to a space
 
 vim.opt.termguicolors = true
@@ -39,3 +40,10 @@ vim.opt.cursorline = true
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+
+-- prevent neovim from commenting my fking next line after a comment.
+vim.opt_local.formatoptions:remove({ 'r', 'o' })
