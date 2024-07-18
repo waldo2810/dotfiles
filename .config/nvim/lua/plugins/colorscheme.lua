@@ -56,24 +56,24 @@ return {
     --         vim.cmd("colorscheme kanagawa")
     --     end
     -- },
-    -- {
-    --     "ellisonleao/gruvbox.nvim",
-    --     priority = 1000,
-    --     config = function ()
-    --         require("gruvbox").setup({
-    --             italic = {
-    --                 strings = false,
-    --                 emphasis = true,
-    --                 comments = true,
-    --                 operators = false,
-    --                 folds = true,
-    --             },
-    --             contrast = "", -- can be "hard", "soft" or empty string
-    --             transparent_mode = true,
-    --         })
-    --         vim.cmd("colorscheme gruvbox")
-    --     end,
-    -- }
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        config = function()
+            require("gruvbox").setup({
+                italic = {
+                    strings = false,
+                    emphasis = true,
+                    comments = true,
+                    operators = false,
+                    folds = true,
+                },
+                contrast = "", -- can be "hard", "soft" or empty string
+                transparent_mode = true,
+            })
+            vim.cmd("colorscheme gruvbox")
+        end,
+    }
     -- {
     --     'jesseleite/nvim-noirbuddy',
     --     dependencies = {
