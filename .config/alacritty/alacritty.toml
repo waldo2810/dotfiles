@@ -22,11 +22,11 @@ opacity = 0.98
 
 [font]
 size = 9
-# normal = { family = "JetBrainsMono Nerd Font" }
+normal = { family = "JetBrainsMono Nerd Font" }
 # normal = { family = "MesloLGL Nerd Font" }
 # normal = { family = "Ubuntu Mono" }
 # normal = { family = "Iosevka Nerd Font" }
-normal = { family = "FiraCode Nerd Font" }
+# normal = { family = "FiraCode Nerd Font" }
 
 [keyboard]
 bindings = [
