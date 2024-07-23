@@ -13,29 +13,29 @@ return {
     --         vim.cmd.colorscheme 'solarized'
     --     end,
     -- },
-    -- {
-    --     "rose-pine/neovim",
-    --     name = "rose-pine",
-    --     config = function ()
-    --         require("rose-pine").setup({
-    --             dark_variant = "main", -- main, moon, or dawn
-    --             styles = {
-    --                 bold = true,
-    --                 italic = false,
-    --                 transparency = true,
-    --             },
-    --             highlight_groups = {
-    --                 -- Comment = { fg = "foam" },
-    --                 -- VertSplit = { fg = "muted", bg = "muted" },
-    --             },
-    --         })
-    --
-    --         vim.cmd("colorscheme rose-pine")
-    --         -- vim.cmd("colorscheme rose-pine-main")
-    --         -- vim.cmd("colorscheme rose-pine-moon")
-    --         -- vim.cmd("colorscheme rose-pine-dawn")
-    --     end
-    -- },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        config = function ()
+            require("rose-pine").setup({
+                dark_variant = "main", -- main, moon, or dawn
+                styles = {
+                    bold = true,
+                    italic = false,
+                    transparency = true,
+                },
+                highlight_groups = {
+                    -- Comment = { fg = "foam" },
+                    -- VertSplit = { fg = "muted", bg = "muted" },
+                },
+            })
+
+            vim.cmd("colorscheme rose-pine")
+            -- vim.cmd("colorscheme rose-pine-main")
+            -- vim.cmd("colorscheme rose-pine-moon")
+            -- vim.cmd("colorscheme rose-pine-dawn")
+        end
+    },
     -- {
     --     "rebelot/kanagawa.nvim",
     --     priority = 1000,
@@ -56,24 +56,24 @@ return {
     --         vim.cmd("colorscheme kanagawa")
     --     end
     -- },
-    {
-        "ellisonleao/gruvbox.nvim",
-        priority = 1000,
-        config = function()
-            require("gruvbox").setup({
-                italic = {
-                    strings = false,
-                    emphasis = true,
-                    comments = true,
-                    operators = false,
-                    folds = true,
-                },
-                contrast = "", -- can be "hard", "soft" or empty string
-                transparent_mode = true,
-            })
-            vim.cmd("colorscheme gruvbox")
-        end,
-    }
+    -- {
+    --     "ellisonleao/gruvbox.nvim",
+    --     priority = 1000,
+    --     config = function()
+    --         require("gruvbox").setup({
+    --             italic = {
+    --                 strings = false,
+    --                 emphasis = true,
+    --                 comments = true,
+    --                 operators = false,
+    --                 folds = true,
+    --             },
+    --             contrast = "", -- can be "hard", "soft" or empty string
+    --             transparent_mode = true,
+    --         })
+    --         vim.cmd("colorscheme gruvbox")
+    --     end,
+    -- }
     -- {
     --     'jesseleite/nvim-noirbuddy',
     --     dependencies = {
@@ -91,6 +91,16 @@ return {
     --     'kdheepak/monochrome.nvim',
     --     config = function()
     --         vim.cmd 'colorscheme monochrome'
+    --     end
+    -- }
+    -- {
+    --     'cranberry-clockworks/coal.nvim',
+    --     config = function ()
+    --         require('coal').setup({
+    --             colors = {
+    --                 smoky_black = '#000000'
+    --             }
+    --         })
     --     end
     -- }
 }
