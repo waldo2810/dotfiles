@@ -1,9 +1,10 @@
 import = [
-    "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
+    # "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
     # "~/.config/alacritty/themes/themes/gruvbox_light.toml"
     # "~/.config/alacritty/themes/themes/kanagawa_wave.toml"
     # "~/.config/alacritty/themes/themes/hyper.toml"
-    # "~/.config/alacritty/themes/themes/rose-pine.toml"
+    "~/.config/alacritty/themes/themes/rose-pine.toml"
+    # "~/.config/alacritty/themes/themes/rose-pine-dawn.toml"
     # "~/.config/alacritty/themes/themes/solarized_light.toml"
     # "~/.config/alacritty/themes/themes/solarized_dark.toml"
     # "~/.config/alacritty/themes/themes/solarized_osaka.toml"
@@ -16,17 +17,17 @@ import = [
 program = "/bin/zsh"
 
 [window]
-opacity = 0.98
+opacity = 0.90
 # padding = { x = 5, y = 5 }
 # decorations = "None"
 
 [font]
 size = 9
-normal = { family = "JetBrainsMono Nerd Font" }
+# normal = { family = "JetBrainsMono Nerd Font" }
 # normal = { family = "MesloLGL Nerd Font" }
 # normal = { family = "Ubuntu Mono" }
 # normal = { family = "Iosevka Nerd Font" }
-# normal = { family = "FiraCode Nerd Font" }
+normal = { family = "FiraCode Nerd Font" }
 
 [keyboard]
 bindings = [
