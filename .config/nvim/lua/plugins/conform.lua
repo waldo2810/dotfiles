@@ -1,6 +1,6 @@
 return { -- Autoformat
     'stevearc/conform.nvim',
-    enabled = false,
+    enabled = true,
     lazy = false,
     keys = {
         {
@@ -19,24 +19,20 @@ return { -- Autoformat
                 -- Disable "format_on_save lsp_fallback" for languages that don't
                 -- have a well standardized coding style. You can add additional
                 -- languages here or re-enable it for the disabled ones.
-                local disable_filetypes = { c = true, cpp = true }
+                -- or just languages you hate (TYPESCRIPT).
+
+                local disable_filetypes = { c = true, cpp = true, tsx = true }
                 return {
                     timeout_ms = 500,
-                    lsp_format = "fallback",
                     lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+                    lsp_format = "fallback",
                 }
             end,
             formatters_by_ft = {
                 lua = { 'stylua' },
-                javascript = { { "biome", "prettierd", "prettier" } },
-                typescript = { { "biome", "prettierd", "prettier" } },
+                javascript = { { "prettierd", "prettier" } },
+                -- typescript = { { "biome", "prettierd", "prettier" } },
             },
         })
-        -- require('conform').formatters.eslint_d = {
-        --     command = "eslint_d",
-        --     prepend_args = function()
-        --         return { "--rule", "'{'space-in-parens": ["error", "always"]}'" }
-        --     end,
-        -- }
     end
 }
