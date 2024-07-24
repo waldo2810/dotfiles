@@ -82,6 +82,14 @@ return {
                     filetypes = (require("plugins.lsp.servers")[server_name] or {}).filetypes,
                 })
             end,
+            jdtls = function ()
+                require('java').setup {
+                    -- config
+                }
+                require('lspconfig').jdtls.setup {
+                    -- nvim-java config
+                }
+            end
         })
 
         -- Gleam LSP
