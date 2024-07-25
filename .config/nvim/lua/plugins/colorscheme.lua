@@ -13,29 +13,30 @@ return {
     --         vim.cmd.colorscheme 'solarized'
     --     end,
     -- },
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function ()
-            require("rose-pine").setup({
-                dark_variant = "main", -- main, moon, or dawn
-                styles = {
-                    bold = true,
-                    italic = false,
-                    transparency = true,
-                },
-                highlight_groups = {
-                    -- Comment = { fg = "foam" },
-                    -- VertSplit = { fg = "muted", bg = "muted" },
-                },
-            })
-
-            vim.cmd("colorscheme rose-pine")
-            -- vim.cmd("colorscheme rose-pine-main")
-            -- vim.cmd("colorscheme rose-pine-moon")
-            -- vim.cmd("colorscheme rose-pine-dawn")
-        end
-    },
+    -- {
+    --     "rose-pine/neovim",
+    --     name = "rose-pine",
+    --     config = function()
+    --         require("rose-pine").setup({
+    --             dark_variant = "main", -- main, moon, or dawn
+    --             styles = {
+    --                 bold = true,
+    --                 -- italic = false,
+    --                 -- transparency = true,
+    --             },
+    --             highlight_groups = {
+    --                 -- Comment = { fg = "foam" },
+    --                 -- VertSplit = { fg = "muted", bg = "muted" },
+    --             },
+    --         })
+    --
+    --         vim.o.background = 'dark' -- or 'light'
+    --         vim.cmd("colorscheme rose-pine")
+    --         -- vim.cmd("colorscheme rose-pine-main")
+    --         -- vim.cmd("colorscheme rose-pine-moon")
+    --         -- vim.cmd("colorscheme rose-pine-dawn")
+    --     end
+    -- },
     -- {
     --     "rebelot/kanagawa.nvim",
     --     priority = 1000,
