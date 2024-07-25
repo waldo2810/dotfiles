@@ -33,7 +33,7 @@ exec_always --no-startup-id sleep 5 && picom -b
 
 # wallpaper
 # exec "feh -z --bg-fill /home/wasabi/Pictures/wallpapers/uwu/"
-exec_always "feh --bg-fill /home/wasabi/Pictures/wallpapers/black-w-lines.jpg"
+exec_always "feh --bg-fill /home/wasabi/Pictures/wallpapers/uwu/vagabond-3.jpg"
 
 # keyboard layout
 exec_always "setxkbmap -layout us,latam"
@@ -118,7 +118,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -191,6 +191,23 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# shutdown / restart / suspend...
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (CTRL+s) shutdown
+
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id i3lock && systemctl suspend, mode "default"
+    # bindsym h exec --no-startup-id i3lock && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id reboot, mode "default"
+    bindsym Ctrl+s exec --no-startup-id shutdown -h now, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+BackSpace mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
