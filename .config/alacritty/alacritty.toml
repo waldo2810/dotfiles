@@ -1,33 +1,24 @@
-import = [
-    # "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
-    # "~/.config/alacritty/themes/themes/gruvbox_light.toml"
-    # "~/.config/alacritty/themes/themes/kanagawa_wave.toml"
-    "~/.config/alacritty/themes/themes/hyper.toml"
-    # "~/.config/alacritty/themes/themes/rose-pine.toml"
-    # "~/.config/alacritty/themes/themes/rose-pine-dawn.toml"
-    # "~/.config/alacritty/themes/themes/solarized_light.toml"
-    # "~/.config/alacritty/themes/themes/solarized_dark.toml"
-    # "~/.config/alacritty/themes/themes/solarized_osaka.toml"
-    # "~/.config/alacritty/themes/themes/seashells.toml"
-    # "~/.config/alacritty/themes/themes/alabaster.toml"
-    # "~/.config/alacritty/themes/themes/alabaster_dark.toml"
-]
+import = ["/home/wasabi/dotfiles/.config/alacritty/themes/themes/hyper.toml"]
 
 [shell]
 program = "/bin/zsh"
 
 [window]
-opacity = 0.90
-# padding = { x = 5, y = 5 }
+# opacity = 0.90
+padding = { x = 0, y = 0 }
 # decorations = "None"
 
 [font]
-size = 8
+# offset = { x = 0 , y = 10 }
+# size = 9
 # normal = { family = "JetBrainsMono Nerd Font" }
 # normal = { family = "MesloLGL Nerd Font" }
 # normal = { family = "Ubuntu Mono" }
 # normal = { family = "Iosevka Nerd Font" }
-normal = { family = "FiraCode Nerd Font" }
+# normal = { family = "FiraCode Nerd Font" }
+# normal = { family = "RobotoMono Nerd Font" }
+# normal = { family = "Liberation Mono" }
+normal = { family = "DankMono Nerd Font" }
 
 [keyboard]
 bindings = [
