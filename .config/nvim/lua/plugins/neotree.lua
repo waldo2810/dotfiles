@@ -26,27 +26,10 @@ return {
     keys = {
         {
             "<leader>fe",
-            function ()
-                require("neo-tree.command").execute({toggle=true})
+            function()
+                require("neo-tree.command").execute({ toggle = true, source = "filesystem", position = "right", width = 50 })
             end
         },
-        -- {
-        --     "<leader>fe",
-        --     function()
-        --         local current_dir = vim.fn.expand('%:p:h')
-        --         require("neo-tree.command").execute({ toggle = true, dir = current_dir })
-        --     end,
-        --     desc = "Explorer NeoTree (Root Dir)",
-        -- },
-        -- {
-        --     "<leader>fE",
-        --     function()
-        --         require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
-        --     end,
-        --     desc = "Explorer NeoTree (cwd)",
-        -- },
-        -- { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
-        -- { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
         {
             "<leader>ge",
             function()
@@ -91,9 +74,11 @@ return {
             bind_to_cwd = false,
             follow_current_file = { enabled = true },
             use_libuv_file_watcher = true,
-            hijack_netrw_behavior = "disabled",
+            -- hijack_netrw_behavior = "disabled",
         },
         window = {
+            position = "right",
+            width = 50,
             mappings = {
                 ["l"] = "open",
                 ["h"] = "close_node",
@@ -138,7 +123,7 @@ return {
         local events = require("neo-tree.events")
         opts.event_handlers = opts.event_handlers or {}
         vim.list_extend(opts.event_handlers, {
-            { event = events.FILE_MOVED, handler = on_move },
+            { event = events.FILE_MOVED,   handler = on_move },
             { event = events.FILE_RENAMED, handler = on_move },
         })
         require("neo-tree").setup(opts)
