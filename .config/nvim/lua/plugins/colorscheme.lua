@@ -9,7 +9,7 @@ return {
                 theme = 'neo',
                 -- transparent = true,
             })
-            vim.cmd.colorscheme 'solarized'
+            -- vim.cmd.colorscheme 'solarized'
         end,
     },
     {
@@ -26,7 +26,7 @@ return {
                 },
             })
 
-            vim.cmd("colorscheme rose-pine")
+            -- vim.cmd("colorscheme rose-pine")
             -- vim.cmd("colorscheme rose-pine-main")
             -- vim.cmd("colorscheme rose-pine-moon")
             -- vim.cmd("colorscheme rose-pine-dawn")
@@ -51,12 +51,12 @@ return {
                 colors = { theme = { all = { ui = { bg_gutter = "none" } } } }
             })
 
-            vim.cmd("colorscheme kanagawa")
+            -- vim.cmd("colorscheme kanagawa")
         end
     },
     {
         "ellisonleao/gruvbox.nvim",
-        enabled = false,
+        enabled = true,
         priority = 1000,
         config = function()
             require("gruvbox").setup({
@@ -71,7 +71,7 @@ return {
                 transparent_mode = false,
             })
 
-            vim.cmd("colorscheme gruvbox")
+            -- vim.cmd("colorscheme gruvbox")
         end,
     },
     {
@@ -108,14 +108,14 @@ return {
     },
     {
         "Mofiqul/adwaita.nvim",
-        enabled = false,
+        enabled = true,
         lazy = false,
         priority = 1000,
         config = function()
             -- vim.g.adwaita_darker = true -- for darker version
             -- vim.g.adwaita_disable_cursorline = true -- to disable cursorline
             -- vim.g.adwaita_transparent = true    -- makes the background transparent
-            vim.cmd('colorscheme adwaita')
+            -- vim.cmd('colorscheme adwaita')
         end
     },
     {
@@ -149,7 +149,7 @@ return {
     },
     {
         'projekt0n/github-nvim-theme',
-        enabled = true,
+        enabled = false,
         lazy = false,    -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
@@ -166,4 +166,22 @@ return {
             -- vim.cmd('colorscheme github_dark_default')
         end,
     },
+
+    -- Auto darkmode
+    {
+        "f-person/auto-dark-mode.nvim",
+        enabled = true,
+        opts = {
+            update_interval = 2000,
+            set_dark_mode = function()
+                vim.api.nvim_set_option_value("background", "dark", {})
+                -- vim.cmd('colorscheme adwaita')
+                vim.cmd("colorscheme gruvbox")
+            end,
+            set_light_mode = function()
+                vim.api.nvim_set_option_value("background", "light", {})
+                vim.cmd("colorscheme gruvbox")
+            end,
+        },
+    }
 }

@@ -1,5 +1,5 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
-vim.keymap.set("n", "<leader>pv", ":Ex<Return>", { silent = true })
+vim.keymap.set("n", "<leader>pv", ":Oil<Return>", { silent = true })
 vim.keymap.set("n", "<C-A>", "gg<S-v>G")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

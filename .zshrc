@@ -81,3 +81,6 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Turso
 export PATH="$PATH:/home/wasabi/.turso"
+
+#.local binaries
+export PATH="$HOME/.local/bin:$PATH"

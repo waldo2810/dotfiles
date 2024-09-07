@@ -1,12 +1,12 @@
 * {
-    font-family: "Iosevka Nerd Font";
-    font-size: 0.8rem;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 0.85rem;
     border: none;
 }
 
 window#waybar {
-    background-color: rgba(0,0,0,0.8);
-    color: #ffffff;
+    color: #ebdbb2;
+    background-color: transparent;
 }
 
 button {
@@ -18,30 +18,43 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces {
+    background-color: #282828;
+    border-radius: 100px;
 }
 
 #workspaces button {
-    padding: 0 5px;
+    color: #ebdbb2;
     background-color: transparent;
-    color: #ffffff;
+    padding: 0 0.5rem;
 }
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
+    border: none;
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    color: #282828;
+    background-color: #fe8019;
+    border-radius: 100px;
+    font-weight: bold;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #cc241d;
 }
 
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+.modules-center {
+    background-color: #282828;
+    border-radius: 100px;
+}
+
+.modules-right {
+    background-color: #282828;
+    border-radius: 100px;
 }
 
 #clock,
@@ -62,35 +75,19 @@ button:hover {
 #mpd,
 #language {
     background-color: transparent;
-    color: #ffffff;
-    padding: 0 0.5rem;
-    border-left: dashed rgba(255,255,255,0.3) 1px;
-}
-
-#window,
-#workspaces {
-    margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+    color: #ebdbb2;
+    margin: 0 0.8rem;
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: #458588;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
@@ -129,11 +126,11 @@ button:hover {
     min-width: 16px;
 }
 
-#keyboard-state > label {
+#keyboard-state>label {
     padding: 0 5px;
 }
 
-#keyboard-state > label.locked {
+#keyboard-state>label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -142,5 +139,5 @@ button:hover {
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+    background-color: transparent;
 }
