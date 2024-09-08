@@ -1,0 +1,30 @@
+{
+    "label" : "lock",
+    "action" : "swaylock",
+    "text" : "[L]ock",
+    "keybind" : "l"
+}
+{
+    "label" : "logout",
+    "action" : "sway exit",
+    "text" : "[E]xit",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "shutdown now",
+    "text" : "Shutd[O]wn",
+    "keybind" : "o"
+}
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend && swaylock",
+    "text" : "[S]uspend",
+    "keybind" : "s"
+}
+{
+    "label" : "reboot",
+    "action" : "reboot",
+    "text" : "[R]eboot",
+    "keybind" : "r"
+}

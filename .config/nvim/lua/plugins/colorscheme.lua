@@ -71,7 +71,7 @@ return {
                 transparent_mode = false,
             })
 
-            -- vim.cmd("colorscheme gruvbox")
+            vim.cmd("colorscheme gruvbox")
         end,
     },
     {
@@ -170,7 +170,7 @@ return {
     -- Auto darkmode
     {
         "f-person/auto-dark-mode.nvim",
-        enabled = true,
+        enabled = false,
         opts = {
             update_interval = 2000,
             set_dark_mode = function()

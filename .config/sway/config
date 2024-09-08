@@ -19,11 +19,10 @@ set $menu wofi --show drun
 # set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
-include /etc/sway/config.d/*
 
 ### Output configuration
 # Run: swaymsg -t get_outputs
-output * bg /home/wasabi/Pictures/wallpapers/black-w-lines.jpg fill
+output * bg /home/wasabi/Pictures/wallpapers/black_unity_22_wallpaper_ipad.png fill
 output HDMI-A-1 mode 2560x1440@100hz
 
 ### Idle configuration
@@ -45,7 +44,7 @@ output HDMI-A-1 mode 2560x1440@100hz
 # Read `man 5 sway-input` for more information about this section.
 
 input type:keyboard {
-    xkb_layout es,us
+    xkb_layout latam,us
     xkb_options grp:win_space_toggle
 }
 
@@ -74,7 +73,7 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # Start a terminal
-bindsym $mod+Return exec env -u WAYLAND_DISPLAY $term
+bindsym $mod+Return exec env $term
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -93,7 +92,8 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+# bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec wlogout
 
 ### Moving around:
 

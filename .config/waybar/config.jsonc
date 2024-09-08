@@ -11,14 +11,15 @@
         "clock"
     ],
     "modules-right": [
+        "backlight",
         "pulseaudio",
         "cpu",
         "memory",
-        "battery",
-        "backlight",
         "network",
+        "battery",
         "keyboard-state",
         "sway/language",
+        "custom/power",
         "tray"
     ],
     // Modules configuration
@@ -120,13 +121,13 @@
             "critical": 15
         },
         "format-icons": [
-            "󰁹",
-            "󰂁",
-            "󰂀",
-            "󰁿",
-            "󰁾",
+            "󰂎",
             "󰁼",
-            "󰂎"
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰁹"
         ],
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
@@ -176,5 +177,10 @@
         "escape": true
         //"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/power": {
+        "format": " ⏻ ",
+        "tooltip": false,
+        "on-click": "wlogout --protocol layer-shell"
     }
 }
