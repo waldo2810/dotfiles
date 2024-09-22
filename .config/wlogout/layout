@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "swaylock --ignore-empty-password --daemonize --indicator-caps-lock  --show-failed-attempts --indicator-idle-visible",
     "text" : "[L]ock",
     "keybind" : "l"
 }

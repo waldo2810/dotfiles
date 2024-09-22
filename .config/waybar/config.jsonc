@@ -88,15 +88,15 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "timezone": "America/Bogota",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%a, %B %d %Y}"
     },
     "cpu": {
-        "format": " {usage}%"
+        "format": "   {usage}%"
     },
     "memory": {
-        "format": " {}%"
+        "format": "  {}%"
     },
     "backlight": {
         //"format": "{icon} {percent}%",
@@ -113,21 +113,17 @@
     "battery": {
         "states": {
             "full": 100,
-            "excelent": 80,
-            "good": 70,
-            "normal": 60,
+            "good": 75,
             "half": 50,
-            "warning": 30,
+            "warning": 25,
             "critical": 15
         },
         "format-icons": [
-            "󰂎",
-            "󰁼",
-            "󰁾",
-            "󰁿",
-            "󰂀",
-            "󰂁",
-            "󰁹"
+            "  ",
+            "  ",
+            "  ",
+            "  ",
+            "  "
         ],
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
@@ -135,12 +131,12 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "",
+        "format-wifi": "    {essid}",
         "format-ethernet": "󰌗",
         "tooltip-format": "{essid}/{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{essid}/{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "  {essid}/{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -148,7 +144,7 @@
         "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}% {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": "  {volume}%",
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
@@ -159,9 +155,9 @@
             "portable": "",
             "car": "",
             "default": [
-                "",
-                "",
-                ""
+                " ",
+                " ",
+                "  "
             ]
         },
         "on-click": "pavucontrol"
@@ -179,7 +175,7 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format": " ⏻ ",
+        "format": "  ",
         "tooltip": false,
         "on-click": "wlogout --protocol layer-shell"
     }

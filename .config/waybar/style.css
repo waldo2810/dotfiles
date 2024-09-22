@@ -1,6 +1,6 @@
 * {
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 0.85rem;
+    font-family: "Inter";
+    font-size: 0.9rem;
     border: none;
 }
 
@@ -74,9 +74,8 @@ button:hover {
 #scratchpad,
 #mpd,
 #language {
-    background-color: transparent;
+    padding: 0 0.8rem;
     color: #ebdbb2;
-    margin: 0 0.8rem;
 }
 
 #tray {

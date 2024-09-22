@@ -21,7 +21,7 @@ return { -- Autoformat
                 -- languages here or re-enable it for the disabled ones.
                 -- or just languages you hate (TYPESCRIPT).
 
-                local disable_filetypes = { c = true, cpp = true, tsx = true }
+                local disable_filetypes = { c = true, cpp = true, tsx = true, java = true }
                 return {
                     timeout_ms = 500,
                     lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
@@ -30,6 +30,7 @@ return { -- Autoformat
             end,
             formatters_by_ft = {
                 lua = { 'stylua' },
+                java = { "google-java-format" },
                 javascript = { { "prettierd", "prettier" } },
                 -- typescript = { { "biome", "prettierd", "prettier" } },
             },

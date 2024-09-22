@@ -84,3 +84,9 @@ export PATH="$PATH:/home/wasabi/.turso"
 
 #.local binaries
 export PATH="$HOME/.local/bin:$PATH"
+
+# Maven
+export PATH="$PATH:$HOME/wasabi/apache-maven-3.9.9/bin"
+
+# Jetbrains
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts/"
