@@ -15,9 +15,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-    desc = 'Format on save - TYPESCRIPT ONLY',
-    pattern = { "*.ts", "*.tsx" },
+vim.api.nvim_create_autocmd('User', {
+    group = vim.api.nvim_create_augroup('WasabiGroup', { clear = true }),
+    pattern = 'FormatDashviewer',
     callback = function(args)
         vim.lsp.buf.format({
             bufnr = args.buf,

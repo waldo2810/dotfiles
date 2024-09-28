@@ -16,23 +16,24 @@ return { -- Autoformat
         require('conform').setup({
             notify_on_error = true,
             format_on_save = function(bufnr)
-                -- Disable "format_on_save lsp_fallback" for languages that don't
-                -- have a well standardized coding style. You can add additional
-                -- languages here or re-enable it for the disabled ones.
-                -- or just languages you hate (TYPESCRIPT).
-
-                local disable_filetypes = { c = true, cpp = true, tsx = true, java = true }
-                return {
-                    timeout_ms = 500,
-                    lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-                    lsp_format = "fallback",
-                }
+                local ignore_filetypes = { "c", "cpp", "java" }
+                if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
+                    return
+                end
+                -- Disable autoformat for files in a certain path
+                local bufname = vim.api.nvim_buf_get_name(bufnr)
+                if bufname:match("/subrik/dashviewer/") then
+                    vim.cmd.doautocmd("User FormatDashviewer")
+                    return
+                end
+                -- ...additional logic...
+                return { timeout_ms = 500, lsp_format = "fallback" }
             end,
             formatters_by_ft = {
                 lua = { 'stylua' },
                 java = { "google-java-format" },
                 javascript = { { "prettierd", "prettier" } },
-                -- typescript = { { "biome", "prettierd", "prettier" } },
+                typescript = { { "prettierd", "prettier" } },
             },
         })
     end
