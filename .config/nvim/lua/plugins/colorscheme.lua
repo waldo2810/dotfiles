@@ -6,10 +6,10 @@ return {
         priority = 1000,
         config = function()
             require('solarized').setup({
-                theme = 'neo',
-                -- transparent = true,
+                -- theme = 'neo',
+                transparent = true,
             })
-            -- vim.cmd.colorscheme 'solarized'
+            vim.cmd.colorscheme 'solarized'
         end,
     },
     {
@@ -56,7 +56,7 @@ return {
     },
     {
         "ellisonleao/gruvbox.nvim",
-        enabled = true,
+        enabled = false,
         priority = 1000,
         config = function()
             require("gruvbox").setup({
@@ -108,7 +108,7 @@ return {
     },
     {
         "Mofiqul/adwaita.nvim",
-        enabled = true,
+        enabled = false,
         lazy = false,
         priority = 1000,
         config = function()
@@ -149,12 +149,13 @@ return {
     },
     {
         'projekt0n/github-nvim-theme',
-        enabled = false,
+        enabled = true,
         lazy = false,    -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             require('github-theme').setup({
                 options = {
+                    transparent = true,
                     styles = {
                         keywords = 'italic',
                         functions = 'bold,italic',
@@ -163,7 +164,7 @@ return {
                 }
             })
 
-            -- vim.cmd('colorscheme github_dark_default')
+            vim.cmd('colorscheme github_dark_default')
         end,
     },
 

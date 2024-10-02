@@ -1,6 +1,6 @@
 return {
     'nvim-java/nvim-java',
-    enabled = true,
+    enabled = false,
     filetypes = {
         java = true,
     }
