@@ -1,13 +1,14 @@
 return {
     "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
     main = "ibl",
-    config = function ()
+    config = function()
         local highlight = {
             "MyIndentHighlight"
         }
 
         local hooks = require "ibl.hooks"
-        hooks.register(hooks.type.HIGHLIGHT_SETUP, function ()
+        hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
             vim.api.nvim_set_hl(0, "MyIndentHighlight", { fg = "#404040" })
         end)
 
