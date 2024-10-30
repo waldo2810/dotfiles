@@ -1,15 +1,15 @@
 return {
     {
         'maxmx03/solarized.nvim',
-        enabled = false,
+        enabled = true,
         lazy = false,
         priority = 1000,
         config = function()
             require('solarized').setup({
                 -- theme = 'neo',
-                transparent = true,
+                -- transparent = true,
             })
-            vim.cmd.colorscheme 'solarized'
+            -- vim.cmd.colorscheme 'solarized'
         end,
     },
     {
@@ -26,13 +26,12 @@ return {
                 },
             })
 
-            vim.cmd("colorscheme rose-pine")
-            -- vim.cmd("colorscheme rose-pine-dawn")
+            -- vim.cmd("colorscheme rose-pine")
         end
     },
     {
         "ellisonleao/gruvbox.nvim",
-        enabled = false,
+        enabled = true,
         priority = 1000,
         config = function()
             require("gruvbox").setup({
@@ -43,8 +42,8 @@ return {
                     operators = false,
                     folds = true,
                 },
-                contrast = "soft", -- can be "hard", "soft" or empty string
-                transparent_mode = true,
+                contrast = "hard", -- can be "hard", "soft" or empty string
+                -- transparent_mode = true,
             })
 
             vim.cmd("colorscheme gruvbox")

@@ -2,29 +2,19 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-        { "williamboman/mason.nvim", config = true },
-        "williamboman/mason-lspconfig.nvim",
-        { "j-hui/fidget.nvim",       opts = {} },
-        "folke/neodev.nvim",
+        { "williamboman/mason.nvim",          config = true },
+        { "j-hui/fidget.nvim",                opts = {} },
+        { "williamboman/mason-lspconfig.nvim" },
+        { "folke/neodev.nvim" },
         { "b0o/schemastore.nvim" },
         { "hrsh7th/cmp-nvim-lsp" },
     },
     config = function()
-        require("mason").setup({
-            ui = {
-                border = "rounded",
-                icons = {
-                    package_installed = "✓",
-                    package_pending = "➜",
-                    package_uninstalled = "✗",
-                },
-            },
-        })
+        require("mason").setup({})
         require("mason-lspconfig").setup({
             ensure_installed = vim.tbl_keys(require("plugins.lsp.servers")),
         })
         require("lspconfig.ui.windows").default_options.border = "single"
-
         require("neodev").setup()
 
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -66,10 +56,15 @@ return {
             end,
         })
 
-        -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-        -- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+        -- local function on_attach(client, bufnr)
+        --   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+        --
+        --   -- Keybinding to organize imports
+        --   buf_set_keymap('n', '<leader>oi', '<cmd>lua organize_imports()<CR>', { noremap = true, silent = true })
+        -- end
 
         local mason_lspconfig = require("mason-lspconfig")
 
@@ -77,9 +72,22 @@ return {
             function(server_name)
                 require("lspconfig")[server_name].setup({
                     capabilities = capabilities,
-                    -- on_attach = require("plugins.lsp.on_attach").on_attach,
+                    -- on_attach = (server_name == "tsserver" and on_attach or nil),
                     settings = require("plugins.lsp.servers")[server_name],
                     filetypes = (require("plugins.lsp.servers")[server_name] or {}).filetypes,
+                    commands = {
+                        TypescriptOrgImports = {
+                            function()
+                                local params = {
+                                    command = "_typescript.organizeImports",
+                                    arguments = {
+                                        vim.fn.expand("%:p")
+                                    }
+                                }
+                                vim.lsp.buf.execute_command(params)
+                            end,
+                        },
+                    },
                 })
             end,
             -- jdtls = function ()
@@ -90,15 +98,6 @@ return {
             --         -- nvim-java config
             --     }
             -- end
-        })
-
-        -- Gleam LSP
-        -- For some reason mason doesn't work with gleam lsp
-        require("lspconfig").gleam.setup({
-            cmd = { "gleam", "lsp" },
-            filetypes = { "gleam" },
-            root_dir = require("lspconfig").util.root_pattern("gleam.toml", ".git"),
-            capabilities = capabilities,
         })
 
         vim.diagnostic.config({

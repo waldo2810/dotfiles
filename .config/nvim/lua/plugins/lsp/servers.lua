@@ -1,3 +1,12 @@
+local function organize_imports()
+    local params = {
+        command = "_typescript.organizeImports",
+        arguments = { vim.api.nvim_buf_get_name(0) },
+        title = ""
+    }
+    vim.lsp.buf.execute_command(params)
+end
+
 return {
     jsonls = {
         settings = {
@@ -36,7 +45,7 @@ return {
     vimls = {
         filetypes = { "vim" },
     },
-    tsserver = {},
+    ts_ls = {},
     gopls = {},
     pyright = {},
     clangd = {},

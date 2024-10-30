@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="imajes"
 
 
 
@@ -19,7 +19,7 @@ export NVM_DIR="$HOME/.config/nvm"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH=$PATH:/usr/local/go/bin
 
-alias vim='nvim'
+# alias vim='nvim'
 alias lg='lazygit'
 
 export EDITOR='nvim'
@@ -90,3 +90,5 @@ export PATH="$PATH:$HOME/wasabi/apache-maven-3.9.9/bin"
 
 # Jetbrains
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts/"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

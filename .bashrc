@@ -143,3 +143,5 @@ export PATH="$PATH:/home/wasabi/.turso"
 
 #.local binaries
 export PATH="$HOME/.local/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

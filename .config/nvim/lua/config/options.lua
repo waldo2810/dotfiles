@@ -1,5 +1,5 @@
 vim.g.mapleader = " "      -- change leader to a space
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 vim.g.maplocalleader = " " -- change localleader to a space
 
 vim.opt.termguicolors = true
@@ -15,7 +15,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.breakindent = true
-vim.opt.undofile = true
+vim.opt.undofile = false
 vim.opt.swapfile = false
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
