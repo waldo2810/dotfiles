@@ -5,7 +5,7 @@ titlebar_border_thickness 0
 
 gaps inner 2
 
-font pango:JetBrainsMono Nerd Font 10
+font pango:SFMono Nerd Font 10
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -13,10 +13,10 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty
+set $term ghostty
 
-set $menu wofi --show drun
-# set $menu dmenu_path | wmenu | xargs swaymsg exec --
+#set $menu wofi --show drun
+set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
 
@@ -43,10 +43,16 @@ output HDMI-A-1 mode 2560x1440@100hz
 # Run: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+# exec_always "setxkbmap -layout us -option 'grp:win_space_toggle' -option caps:escape"
+
+# input type:keyboard xkb_layout "latam,us"
+# input type:keyboard xkb_options "grp:alt_shift_toggle"
+# input type:keyboard xkb_options "caps:escape"
+
 input type:keyboard {
-    xkb_layout latam,us
-    xkb_options grp:win_space_toggle
+        xkb_layout us,latam
 }
+bindsym $mod+Control input type:keyboard xkb_switch_layout next
 
 input "1267:12448:ELAN0708:00_04F3:30A0_Touchpad" {
     dwt enabled
@@ -211,18 +217,20 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    # position top
-    #
-    # # When the status_command prints a new line to stdout, swaybar updates.
-    # # The default just shows the current date and time.
+    position bottom
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
     # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-    #
-    # colors {
-    #     statusline #ffffff
-    #     background #323232
-    #     inactive_workspace #32323200 #32323200 #5c5c5c
-    # }
-    swaybar_command waybar
+    status_command /home/wasabi/.config/sway/status_bar.sh
+    colors {
+        statusline #ffffff
+        background #00000070
+        separator #FFFFFF
+        focused_workspace #FE8019 #D65D0E #EBDBB2
+        inactive_workspace #00000070 #00000070 #EBDBB2
+        urgent_workspace #fb4934 #cc241d #EBDBB2
+    }
+    # swaybar_command waybar
 }
 
 include /etc/sway/config.d/*

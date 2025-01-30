@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="imajes"
+ZSH_THEME="robbyrussell"
 
 
 
@@ -17,12 +17,13 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm ba>
 
 export PATH="$PATH:/opt/nvim-linux64/bin"
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/home/wasabi/go/bin"
 
 # alias vim='nvim'
 alias lg='lazygit'
 
-export EDITOR='nvim'
+export EDITOR='vim'
 
 alias screenshot='maim --select | xclip -selection clipboard -t image/png'
 
@@ -90,5 +91,8 @@ export PATH="$PATH:$HOME/wasabi/apache-maven-3.9.9/bin"
 
 # Jetbrains
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts/"
+
+# Zig
+export PATH="$PATH:$HOME/zig/"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

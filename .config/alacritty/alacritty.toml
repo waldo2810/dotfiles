@@ -1,4 +1,4 @@
-import = ["/home/wasabi/dotfiles/.config/alacritty/themes/themes/hyper.toml"]
+import = ["/home/wasabi/dotfiles/.config/alacritty/themes/themes/rose-pine.toml"]
 
 [shell]
 program = "/bin/zsh"
@@ -11,12 +11,12 @@ dynamic_padding = true
 
 [font]
 # offset = { x = 0 , y = 10 }
-# size = 11
+size = 10
 # normal = { family = "JetBrainsMono Nerd Font" }
-# # normal = { family = "MesloLGL Nerd Font" }
-normal = { family = "UbuntuMono Nerd Font" }
+# normal = { family = "MesloLGL Nerd Font" }
+# normal = { family = "UbuntuMono Nerd Font" }
 # normal = { family = "Iosevka Nerd Font" }
-# normal = { family = "FiraCode Nerd Font" }
+normal = { family = "FiraCode Nerd Font" }
 # normal = { family = "RobotoMono Nerd Font" }
 # normal = { family = "Liberation Mono" }
 # normal = { family = "DankMono Nerd Font" }

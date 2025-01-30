@@ -1,5 +1,5 @@
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
-vim.keymap.set("n", "<leader>pv", ":Oil<Return>", { silent = true })
+-- vim.keymap.set("n", "<leader>pv", ":Oil<Return>", { silent = true })
+vim.keymap.set("n", "<leader>pv", ":Ex", { silent = true })
 vim.keymap.set("n", "<C-A>", "gg<S-v>G")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -22,3 +22,9 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- Open LazyGit
 vim.keymap.set("n", "<leader>lg", ":LazyGit<Return>", { desc = "Open diagnostics list" })
+
+-- Resize window
+vim.keymap.set('n', '<C-left>', '<C-w><')
+vim.keymap.set('n', '<C-right>', '<C-w>>')
+vim.keymap.set('n', '<C-up>', '<C-w>+')
+vim.keymap.set('n', '<C-down>', '<C-w>-')

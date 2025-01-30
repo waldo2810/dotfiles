@@ -16,9 +16,9 @@ set incsearch
 
 set autoindent
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 set smartindent
 set smarttab
@@ -29,19 +29,27 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'prabirshrestha/vim-lsp'
-" Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 " ----------------------- Keymaps
 noremap <leader>pv :Ex<CR>
 nnoremap <Esc> :noh<CR>
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <C-a> gg<S-v>G
 
-nnoremap <C-p> :Files!<CR>
-nnoremap <leader>gf :GFiles!<CR>
-nnoremap <leader>fg :RG!<CR>
+nnoremap <C-left> <C-w><
+nnoremap <C-right> <C-w>>
+nnoremap <C-up> <C-w>+
+nnoremap <C-down> <C-w>-
+
+nnoremap <C-p> :Files<CR>
+nnoremap <leader>gf :GFiles<CR>
+nnoremap <leader>fg :RG<CR>
 
 if executable('vim-language-server')
   augroup LspVim
@@ -66,23 +74,46 @@ if executable('typescript-language-server')
         \ })
 endif
 
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls', '-remote=auto']},
+        \ 'allowlist': ['go', 'gomod', 'gohtmltmpl', 'gotexttmpl'],
+        \ })
+    autocmd BufWritePre *.go
+        \ call execute('LspDocumentFormatSync') |
+        \ call execute('LspCodeActionSync source.organizeImports')
+endif
+
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
+
     nmap <buffer> gd <plug>(lsp-definition)
     nmap <buffer> gr <plug>(lsp-references)
     nmap <buffer> <leader>rn <plug>(lsp-rename)
     nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <leader>ca :LspCodeAction<CR>
+    nnoremap <leader>e :LspDocumentDiagnostics<CR>
+    nnoremap <leader>f :LspDocumentFormat<CR>
     nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-h> lsp#scroll(-4)
 
-    nnoremap <leader>ca :LspCodeActions<CR>
-
-    let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
-    
-    " refer to doc to add more commands
 endfunction
+
+let g:lsp_format_sync_timeout = 1000
+let g:lsp_semantic_enabled = 1
+let g:lsp_code_actions_use_popup_menu = 1
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_virtual_text_enabled = 0
+let g:lsp_diagnostics_signs_enabled = 1
+let g:lsp_diagnostics_signs_error = {'text': '🚫'}
+let g:lsp_diagnostics_signs_warning = {'text': '⚠️'}
+let g:lsp_diagnostics_signs_hint = {'text': '🔍'}
+let g:lsp_diagnostics_signs_information = {'text': 'ℹ️'}
+let g:lsp_document_code_action_signs_enabled = 1
+let g:lsp_document_code_action_signs_hint = {'text': '🔹'}
 
 augroup lsp_install
     au!
@@ -91,7 +122,9 @@ augroup lsp_install
 augroup END
 
 " IDK why this needs to go last
+" set termguicolors
 syntax on
-let g:solarized_termcolors=256
+set t_Co=16
+let g:solarized_termcolors=16
 set background=dark
 colorscheme gruvbox
