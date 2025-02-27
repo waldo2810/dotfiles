@@ -19,9 +19,9 @@ while true; do
     CONNECTION_TYPE=$(nmcli -t -f TYPE,NAME connection show --active | grep -E '^802-11-wireless|^ethernet')
     if [[ $CONNECTION_TYPE == *"802-11-wireless"* ]]; then
         CONNECTION_NAME=$(echo $CONNECTION_TYPE | grep '802-11-wireless' | cut -d ":" -f 2)
-        CONNECTION_STATUS="Wi-Fi: $CONNECTION_NAME"
+        CONNECTION_STATUS="wifi: $CONNECTION_NAME"
     elif [[ $CONNECTION_TYPE == *"ethernet"* ]]; then
-        CONNECTION_NAME=$(echo $CONNECTION_TYPE | grep 'ethernet' | cut -d ":" -f 2)
+        CONNECTION_NAME=$(echo $CONNECTION_TYPE | grep 'eth' | cut -d ":" -f 2)
         IP_ADDRESS=$(ip addr show $CONNECTION_NAME | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)
         CONNECTION_STATUS="LAN: $CONNECTION_NAME (IP: $IP_ADDRESS)"
     else
@@ -58,8 +58,7 @@ while true; do
     LAYOUT_INFO=$SIMPLE_LAYOUT
 
     # Format and print the status
-    # echo "CPU: ${CPU_PERCENT%%.*}% 󰇝 MEM: ${MEM_PERCENT%%.*}% 󰇝 VOL: $VOLUME_STATUS 󰇝 BAT: $BATTERY_INFO 󰇝 $CONNECTION_STATUS 󰇝 $LAYOUT_INFO 󰇝 $DATE"
-    echo "  ${CPU_PERCENT%%.*}% 󰇝 MEM: ${MEM_PERCENT%%.*}% 󰇝   $VOLUME_STATUS 󰇝 󰁹 $BATTERY_INFO 󰇝 $CONNECTION_STATUS 󰇝   $LAYOUT_INFO 󰇝 $DATE"
+    echo "cpu: ${CPU_PERCENT%%.*}% | mem: ${MEM_PERCENT%%.*}% | vol: $VOLUME_STATUS | bat: $BATTERY_INFO $CONNECTION_STATUS | keyb: $LAYOUT_INFO | $DATE"
 
     sleep 1
 done

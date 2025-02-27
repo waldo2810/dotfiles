@@ -1,22 +1,27 @@
 # theme=light:rose-pine-dawn,dark:rose-pine
 # theme=light:GruvboxLightHard,dark:GruvboxDarkHard
-theme=light:catppuccin-latte,dark:catppuccin-mocha
+# theme=light:catppuccin-latte,dark:catppuccin-mocha
 # theme=light:iTerm2 Solarized Light,dark:iTerm2 Solarized Dark
+# theme=light:Builtin Tango Light,dark:HaX0R_GR33N  
+# theme=light:Builtin Tango Light,dark:Builtin Tango Dark
+theme=light:Github,dark:GitHub Dark
 
 # font-family=FiraCode Nerd Font Mono
-# font-family=Iosevka Nerd Font Mono
+font-family=Iosevka Nerd Font Mono
 # font-family=SFMono Nerd Font
 # font-family=UbuntuMono Nerd Font
 # font-family=RobotoMono Nerd Font
 # font-family=MesloLGL Nerd Font
 # font-family=Monaco Nerd Font Mono
+# font-family=Inconsolata Nerd Font Mono
+# font-family=Hack Nerd Font
 font-size=10
 
 cursor-style=block
 cursor-style-blink=false
 
 gtk-adwaita=true
-# gtk-titlebar=false
+gtk-titlebar=false
 adw-toolbar-style=flat
 window-theme=ghostty
 window-padding-x=0

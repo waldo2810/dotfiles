@@ -17,8 +17,8 @@ return {
     view = {
       adaptive_size = true,
       float = {
-        --enable = true,
-        enable = false,
+        enable = true,
+        -- enable = false,
       },
     },
   },
