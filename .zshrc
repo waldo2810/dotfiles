@@ -96,3 +96,5 @@ export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts/"
 export PATH="$PATH:$HOME/zig/"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export HELIX_RUNTIME=~/helix/runtime
