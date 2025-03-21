@@ -1,129 +1,98 @@
 return {
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-        { "williamboman/mason.nvim",          config = true },
-        { "j-hui/fidget.nvim",                opts = {} },
-        { "williamboman/mason-lspconfig.nvim" },
-        { "folke/neodev.nvim" },
-        { "b0o/schemastore.nvim" },
-        { "hrsh7th/cmp-nvim-lsp" },
-    },
-    config = function()
-        require("mason").setup({})
-        require("mason-lspconfig").setup({
-            ensure_installed = vim.tbl_keys(require("plugins.lsp.servers")),
+  "neovim/nvim-lspconfig",
+  event = { "BufReadPre", "BufNewFile" },
+  dependencies = {
+    { "williamboman/mason.nvim",          config = true },
+    { "j-hui/fidget.nvim",                opts = {} },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "folke/neodev.nvim" },
+    { "b0o/schemastore.nvim" },
+    { "hrsh7th/cmp-nvim-lsp" },
+  },
+  config = function()
+    local lspconfig = require("lspconfig")
+    local mason_lspconfig = require("mason-lspconfig")
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+    -- Global on_attach function
+    local function on_attach(client, bufnr)
+      local function map(keys, func, desc)
+        vim.keymap.set("n", keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
+      end
+
+      map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
+      map("gr", require("telescope.builtin").lsp_references, "Goto References")
+      map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
+      map("go", require("telescope.builtin").lsp_type_definitions, "Type Definition")
+      map("<leader>p", require("telescope.builtin").lsp_document_symbols, "Document Symbols")
+      map("<leader>P", require("telescope.builtin").lsp_workspace_symbols, "Workspace Symbols")
+      map("gl", vim.diagnostic.open_float, "Open Diagnostic Float")
+      map("K", vim.lsp.buf.hover, "Hover Documentation")
+      map("gs", vim.lsp.buf.signature_help, "Signature Documentation")
+      map("gD", vim.lsp.buf.declaration, "Goto Declaration")
+
+      if client.server_capabilities.documentHighlightProvider then
+        vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+          buffer = bufnr,
+          callback = vim.lsp.buf.document_highlight,
         })
-        require("lspconfig.ui.windows").default_options.border = "single"
-        require("neodev").setup()
-
-        vim.api.nvim_create_autocmd("LspAttach", {
-            group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
-            callback = function(event)
-                local map = function(keys, func, desc)
-                    vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
-                end
-
-                map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
-                map("gr", require("telescope.builtin").lsp_references, "Goto References")
-                map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
-                map("go", require("telescope.builtin").lsp_type_definitions, "Type Definition")
-                map("<leader>p", require("telescope.builtin").lsp_document_symbols, "Document Symbols")
-                map("<leader>P", require("telescope.builtin").lsp_workspace_symbols, "Workspace Symbols")
-                map("<leader>Ps", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace Symbols")
-
-                map("gl", vim.diagnostic.open_float, "Open Diagnostic Float")
-                map("K", vim.lsp.buf.hover, "Hover Documentation")
-                map("gs", vim.lsp.buf.signature_help, "Signature Documentation")
-                map("gD", vim.lsp.buf.declaration, "Goto Declaration")
-
-                map("<leader>v", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition in Vertical Split")
-
-                -- Thank you teej
-                -- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L502
-                local client = vim.lsp.get_client_by_id(event.data.client_id)
-                if client and client.server_capabilities.documentHighlightProvider then
-                    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-                        buffer = event.buf,
-                        callback = vim.lsp.buf.document_highlight,
-                    })
-
-                    vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-                        buffer = event.buf,
-                        callback = vim.lsp.buf.clear_references,
-                    })
-                end
-            end,
+        vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+          buffer = bufnr,
+          callback = vim.lsp.buf.clear_references,
         })
+      end
+    end
 
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+    -- Ensure LSP servers are installed
+    mason_lspconfig.setup({
+      ensure_installed = { "jsonls", "lua_ls", "ts_ls", "pyright", "gopls", "clangd", "templ", "cssls" },
+    })
 
-        -- local function on_attach(client, bufnr)
-        --   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-        --
-        --   -- Keybinding to organize imports
-        --   buf_set_keymap('n', '<leader>oi', '<cmd>lua organize_imports()<CR>', { noremap = true, silent = true })
-        -- end
+    -- Setup each server
+    lspconfig.jsonls.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
+        json = {
+          schemas = require("schemastore").json.schemas(),
+          validate = { enable = true },
+        },
+      },
+    })
 
-        local mason_lspconfig = require("mason-lspconfig")
-
-        mason_lspconfig.setup_handlers({
-            function(server_name)
-                require("lspconfig")[server_name].setup({
-                    capabilities = capabilities,
-                    -- on_attach = (server_name == "tsserver" and on_attach or nil),
-                    settings = require("plugins.lsp.servers")[server_name],
-                    filetypes = (require("plugins.lsp.servers")[server_name] or {}).filetypes,
-                    commands = {
-                        TypescriptOrgImports = {
-                            function()
-                                local params = {
-                                    command = "_typescript.organizeImports",
-                                    arguments = {
-                                        vim.fn.expand("%:p")
-                                    }
-                                }
-                                vim.lsp.buf.execute_command(params)
-                            end,
-                        },
-                    },
-                })
-            end,
-            -- jdtls = function ()
-            --     require('java').setup {
-            --         -- config
-            --     }
-            --     require('lspconfig').jdtls.setup {
-            --         -- nvim-java config
-            --     }
-            -- end
-        })
-
-        vim.diagnostic.config({
-            title = false,
-            underline = true,
-            virtual_text = true,
-            signs = true,
-            update_in_insert = false,
-            severity_sort = true,
-            float = {
-                source = "always",
-                style = "minimal",
-                border = "rounded",
-                header = "",
-                prefix = "",
+    lspconfig.lua_ls.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          runtime = { version = "LuaJIT" },
+          workspace = {
+            checkThirdParty = false,
+            library = {
+              "${3rd}/luv/library",
+              unpack(vim.api.nvim_get_runtime_file("", true)),
             },
-        })
+          },
+          completion = { callSnippet = "Replace" },
+        },
+      },
+    })
 
-        local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-        for type, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-        end
+    lspconfig.ts_ls.setup({
+      on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>oi",
+          "<cmd>lua vim.lsp.buf.execute_command({ command = '_typescript.organizeImports', arguments = {vim.api.nvim_buf_get_name(0)} })<CR>",
+          { noremap = true, silent = true })
+      end,
+      capabilities = capabilities,
+    })
 
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-            border = "rounded",
-        })
-    end,
+    lspconfig.pyright.setup({ on_attach = on_attach, capabilities = capabilities })
+    lspconfig.gopls.setup({ on_attach = on_attach, capabilities = capabilities })
+    lspconfig.clangd.setup({ on_attach = on_attach, capabilities = capabilities })
+    lspconfig.templ.setup({ on_attach = on_attach, capabilities = capabilities })
+    lspconfig.cssls.setup({ on_attach = on_attach, capabilities = capabilities })
+  end,
 }
