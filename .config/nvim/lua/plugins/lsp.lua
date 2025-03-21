@@ -89,6 +89,21 @@ return {
       capabilities = capabilities,
     })
 
+    lspconfig.angularls.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      cmd = { "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" },
+      on_new_config = function(new_config, new_root_dir)
+        local project_library_path = new_root_dir
+        new_config.cmd = {
+          "ngserver",
+          "--stdio",
+          "--tsProbeLocations", project_library_path,
+          "--ngProbeLocations", project_library_path,
+        }
+      end,
+    })
+
     lspconfig.pyright.setup({ on_attach = on_attach, capabilities = capabilities })
     lspconfig.gopls.setup({ on_attach = on_attach, capabilities = capabilities })
     lspconfig.clangd.setup({ on_attach = on_attach, capabilities = capabilities })
