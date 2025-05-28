@@ -4,15 +4,14 @@ vim.g.maplocalleader = " " -- change localleader to a space
 
 vim.opt.termguicolors = true
 vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 
 vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
-vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.breakindent = true
 vim.opt.undofile = false
@@ -49,4 +48,4 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 -- prevent neovim from commenting my fking next line after a comment.
-vim.opt_local.formatoptions:remove({ 'r', 'o' })
+vim.opt_local.formatoptions:remove({ 'r', 'o' }) -- NOT WORKING

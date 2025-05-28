@@ -18,6 +18,10 @@ return {
       },
       format_on_save = function(bufnr)
         -- Disable with a global or buffer-local variable
+        local disable_filetypes = { java = true }
+        if disable_filetypes[vim.bo[bufnr].filetype] then
+          return
+        end
         if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
           return
         end

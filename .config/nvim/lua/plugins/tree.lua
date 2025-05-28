@@ -17,9 +17,15 @@ return {
     view = {
       adaptive_size = true,
       float = {
-        enable = true,
-        -- enable = false,
+        -- enable = true,
+        enable = false,
       },
+      relativenumber = true
     },
+    update_focused_file = {
+      enable = true
+    },
+    disable_netrw = false,
+    hijack_netrw = false,
   },
 }

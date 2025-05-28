@@ -37,6 +37,8 @@ return {
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
     vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[S]earch [R]esume' })
+    vim.keymap.set('n', '<leader>df', function() builtin.lsp_document_symbols() end,
+      { desc = '[D]efinitions on document' })
     -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
     local action_state = require('telescope.actions.state')

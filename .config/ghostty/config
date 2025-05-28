@@ -7,8 +7,8 @@
 theme=light:Github,dark:GitHub Dark
 
 # font-family=FiraCode Nerd Font Mono
-font-family=Iosevka Nerd Font Mono
-# font-family=SFMono Nerd Font
+# font-family=Iosevka Nerd Font Mono
+font-family= SFMono Nerd Font
 # font-family=UbuntuMono Nerd Font
 # font-family=RobotoMono Nerd Font
 # font-family=MesloLGL Nerd Font
@@ -24,10 +24,5 @@ gtk-adwaita=true
 gtk-titlebar=false
 adw-toolbar-style=flat
 window-theme=ghostty
-window-padding-x=0
-window-padding-y=0
-# window-decoration=false
-
-# ---
-
-# keybind=ctrl+w=toggle_window_decorations
+window-padding-x=1
+window-padding-y=1

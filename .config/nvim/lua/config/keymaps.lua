@@ -1,5 +1,5 @@
--- vim.keymap.set("n", "<leader>pv", ":Oil<Return>", { silent = true })
-vim.keymap.set("n", "<leader>pv", ":Ex", { silent = true })
+vim.keymap.set("n", "<leader>pv", ":Oil<Return>", { silent = true })
+-- vim.keymap.set("n", "<leader>pv", ":Ex", { silent = true })
 vim.keymap.set("n", "<C-A>", "gg<S-v>G")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -28,3 +28,21 @@ vim.keymap.set('n', '<C-left>', '<C-w><')
 vim.keymap.set('n', '<C-right>', '<C-w>>')
 vim.keymap.set('n', '<C-up>', '<C-w>+')
 vim.keymap.set('n', '<C-down>', '<C-w>-')
+
+
+-- nvim-jdtls
+local opts = { noremap = true, silent = true }
+
+-- Organize imports
+vim.keymap.set('n', '<A-o>', function() require('jdtls').organize_imports() end, opts)
+
+-- Extract variable
+vim.keymap.set('n', 'crv', function() require('jdtls').extract_variable() end, opts)
+vim.keymap.set('v', 'crv', function() require('jdtls').extract_variable(true) end, opts)
+
+-- Extract constant
+vim.keymap.set('n', 'crc', function() require('jdtls').extract_constant() end, opts)
+vim.keymap.set('v', 'crc', function() require('jdtls').extract_constant(true) end, opts)
+
+-- Extract method
+vim.keymap.set('v', 'crm', function() require('jdtls').extract_method(true) end, opts)
