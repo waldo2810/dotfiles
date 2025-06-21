@@ -1,13 +1,13 @@
 local on_attach = require("plugins.lsp.on_attach") -- Adjust path if different
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = '/home/wsobrino@cx.local/.eclipse-jdtls-data/' .. project_name
-local install_path = '/home/wsobrino@cx.local/jdt-language-server-1.46.1-202504011455'
+local workspace_dir = '/Users/wasabi/.eclipse-jdtls-data/' .. project_name
+local install_path = '/Users/wasabi/Dev/jdtls/1.46.1'
+local sdk_path = '/Users/wasabi/.sdkman/candidates/java/21.0.7-graal/bin/java'
 
 local config = {
   cmd = {
-    -- '/usr/lib/jvm/java-21-openjdk-amd64/bin/java',
-    '/home/wsobrino@cx.local/.sdkman/candidates/java/21.0.7-amzn/bin/java',
+    sdk_path,
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
     '-Declipse.product=org.eclipse.jdt.ls.core.product',
@@ -21,7 +21,7 @@ local config = {
     '-jar',
     install_path .. '/plugins/org.eclipse.equinox.launcher_1.7.0.v20250331-1702.jar',
     '-configuration',
-    install_path .. '/config_linux',
+    install_path .. '/config_mac',
     '-data',
     workspace_dir
   },

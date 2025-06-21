@@ -29,6 +29,8 @@ vim.keymap.set('n', '<C-right>', '<C-w>>')
 vim.keymap.set('n', '<C-up>', '<C-w>+')
 vim.keymap.set('n', '<C-down>', '<C-w>-')
 
+vim.keymap.set("v", "<Tab>", ">", { noremap = true, silent = true })
+vim.keymap.set("v", "<S-Tab>", "<", { noremap = true, silent = true })
 
 -- nvim-jdtls
 local opts = { noremap = true, silent = true }

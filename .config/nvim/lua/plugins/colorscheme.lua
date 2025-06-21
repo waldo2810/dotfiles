@@ -7,11 +7,11 @@ return {
       require('solarized').setup({
         -- theme = 'neo',
         transparent = {
-          -- enabled = true,
-          enabled = false,
+          enabled = true,
+          -- enabled = false,
         },
       })
-      -- vim.cmd("colorscheme solarized")
+      vim.cmd("colorscheme solarized")
     end,
   },
   {
@@ -23,7 +23,7 @@ return {
         styles = {
           bold = true,
           italic = false,
-          transparency = true,
+          -- transparency = true,
         },
       })
 
@@ -42,11 +42,11 @@ return {
           operators = false,
           folds = true,
         },
-        contrast = "hard", -- can be "hard", "soft" or empty string
-        -- transparent_mode = true,
+        -- contrast = "hard", -- can be "hard", "soft" or empty string
+        transparent_mode = true,
       })
 
-      vim.cmd("colorscheme gruvbox")
+      -- vim.cmd("colorscheme gruvbox")
     end,
   },
   {
@@ -64,6 +64,7 @@ return {
     config = function()
       require("tokyonight").setup({
         style = "night",
+        transparent = "true"
       })
       -- vim.cmd("colorscheme tokyonight")
     end,
