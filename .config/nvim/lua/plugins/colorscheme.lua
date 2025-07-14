@@ -1,3 +1,5 @@
+vim.cmd("colorscheme vim")
+
 return {
   {
     'maxmx03/solarized.nvim',
@@ -11,7 +13,7 @@ return {
           -- enabled = false,
         },
       })
-      vim.cmd("colorscheme solarized")
+      -- vim.cmd("colorscheme solarized")
     end,
   },
   {
@@ -43,7 +45,7 @@ return {
           folds = true,
         },
         -- contrast = "hard", -- can be "hard", "soft" or empty string
-        transparent_mode = true,
+        -- transparent_mode = true,
       })
 
       -- vim.cmd("colorscheme gruvbox")
@@ -64,7 +66,7 @@ return {
     config = function()
       require("tokyonight").setup({
         style = "night",
-        transparent = "true"
+        -- transparent = "true"
       })
       -- vim.cmd("colorscheme tokyonight")
     end,

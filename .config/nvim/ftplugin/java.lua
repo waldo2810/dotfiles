@@ -47,7 +47,11 @@ local config = {
   --
   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
   init_options = {
-    bundles = {}
+    bundles = {
+      vim.fn.glob(
+        '/Users/wasabi/Dev/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.53.2.jar',
+        1)
+    }
   },
 
   on_attach = function(client, bufnr)

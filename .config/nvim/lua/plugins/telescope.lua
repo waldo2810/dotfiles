@@ -19,11 +19,11 @@ return {
       defaults = {
         layout_strategy = 'vertical'
       },
-      extensions = {
-        ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
-        },
-      },
+      -- extensions = {
+      --   ['ui-select'] = {
+      --     require('telescope.themes').get_dropdown(),
+      --   },
+      -- },
     }
 
     pcall(require('telescope').load_extension, 'fzf')

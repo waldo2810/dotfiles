@@ -10,6 +10,7 @@ return {
     { "folke/neodev.nvim" },
     { "b0o/schemastore.nvim" },
     { "hrsh7th/cmp-nvim-lsp" },
+    { "ray-x/lsp_signature.nvim",         event = "InsertEnter", opts = {} },
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -75,6 +76,28 @@ return {
           "--ngProbeLocations", project_library_path,
         }
       end,
+    })
+
+    lspconfig.rust_analyzer.setup({
+      on_attach = on_attach,
+      settings = {
+        ["rust-analyzer"] = {
+          imports = {
+            granularity = {
+              group = "module",
+            },
+            prefix = "self",
+          },
+          cargo = {
+            buildScripts = {
+              enable = true,
+            },
+          },
+          procMacro = {
+            enable = true
+          },
+        }
+      }
     })
 
     lspconfig.pyright.setup({ on_attach = on_attach, capabilities = capabilities })

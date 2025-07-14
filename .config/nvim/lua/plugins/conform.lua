@@ -15,10 +15,12 @@ return {
         typescriptreact = { "prettierd" },
         json = { "prettierd" },
         python = { "black" },
+        java = { "google-java-format" },
+        xml = { "xmlformatter" }
       },
       format_on_save = function(bufnr)
         -- Disable with a global or buffer-local variable
-        local disable_filetypes = { java = true }
+        local disable_filetypes = { filetypenamegoeshere = true }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return
         end

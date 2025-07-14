@@ -15,9 +15,9 @@ return {
     },
     git = {},
     view = {
+      side = "right",
       adaptive_size = true,
       float = {
-        -- enable = true,
         enable = false,
       },
       relativenumber = true
