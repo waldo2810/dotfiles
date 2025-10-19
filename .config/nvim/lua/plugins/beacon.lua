@@ -1,5 +1,6 @@
 return {
     'danilamihailov/beacon.nvim',
+    enabled = false,
     opts = {
         enabled = true,                                --- (boolean | fun():boolean) check if enabled
         speed = 2,                                     --- integer speed at wich animation goes

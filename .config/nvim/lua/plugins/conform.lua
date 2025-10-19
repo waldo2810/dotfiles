@@ -19,11 +19,6 @@ return {
         xml = { "xmlformatter" }
       },
       format_on_save = function(bufnr)
-        -- Disable with a global or buffer-local variable
-        local disable_filetypes = { filetypenamegoeshere = true }
-        if disable_filetypes[vim.bo[bufnr].filetype] then
-          return
-        end
         if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
           return
         end
@@ -51,6 +46,13 @@ return {
       vim.g.disable_autoformat = false
     end, {
       desc = "Re-enable autoformat-on-save",
+    })
+
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "java",
+      callback = function()
+        vim.b.disable_autoformat = true
+      end,
     })
   end
 }

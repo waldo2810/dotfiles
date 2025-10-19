@@ -1,31 +1,51 @@
-# theme=light:rose-pine-dawn,dark:rose-pine
-# theme=light:GruvboxLightHard,dark:GruvboxDarkHard
-# theme=light:catppuccin-latte,dark:catppuccin-mocha
+# theme=TokyoNight
+# theme=Rose Pine
+# theme=Gruvbox Dark Soft
+# theme=Catppuccin Mocha
 # theme=light:iTerm2 Solarized Light,dark:iTerm2 Solarized Dark
 # theme=iTerm2 Solarized Dark
 # theme=light:iTerm2 Light Background,dark:iTerm2 Default
-theme=iTerm2 Default
-# theme=light:Builtin Tango Light,dark:HaX0R_GR33N
+# theme=iTerm2 Default
 # theme=light:Builtin Tango Light,dark:Builtin Tango Dark
 # theme=light:Github,dark:GitHub Dark
+theme=Kanagawa Dragon
 
-font-family=Iosevka Nerd Font Mono
+# font-family=ZedMono Nerd Font Mono
+
+# font-family=Iosevka Nerd Font Mono
+
 # font-family=Monaco
+
 # font-family=SF Mono
+
 # font-family=Menlo
+
 # font-family=GeistMono Nerd Font
+
 # font-family=DankMono Nerd Font
+
+# font-family=Google Sans Code
+
+font-family=Ioskeley Mono
+
+# font-family=UbuntuMono Nerd Font Mono
+# font-size=16
+
+adjust-cell-height=10%
 
 cursor-style=block
 cursor-style-blink=false
 
-gtk-adwaita=true
-gtk-titlebar=false
-adw-toolbar-style=flat
-window-theme=ghostty
-window-padding-x=3
-window-padding-y=2
-window-width=150
-window-height=50
+# background-opacity=0.9
+# background-blur=50
+
+# gtk-adwaita=true
+# gtk-titlebar=false
+# adw-toolbar-style=flat
+# window-theme=ghostty
+# window-padding-x=3
+# window-padding-y=2
+# window-width=200
+# window-height=50
 
 confirm-close-surface=false

@@ -1,9 +1,22 @@
+-- vim.api.nvim_create_autocmd('BufEnter', {
+--   desc = 'Clear background',
+--   pattern = { "*" },
+--   group = vim.api.nvim_create_augroup('clear-background', { clear = true }),
+--   callback = function()
+--     -- :help nvim_set_hl()
+--     -- :help highlight-groups
+--
+--     vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+--     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+--   end
+-- })
+
 vim.api.nvim_create_autocmd('BufEnter', {
   desc = 'Set conceallevel',
   pattern = { "*.md" },
   group = vim.api.nvim_create_augroup('set-conceallevel', { clear = true }),
   callback = function()
-    vim.opt_local.conceallevel = 2
+    vim.opt_local.conceallevel = 1 -- :h syn-conceal; :h conceallevel
   end
 })
 

@@ -1,5 +1,3 @@
-vim.cmd("colorscheme vim")
-
 return {
   {
     'maxmx03/solarized.nvim',
@@ -9,8 +7,8 @@ return {
       require('solarized').setup({
         -- theme = 'neo',
         transparent = {
-          enabled = true,
-          -- enabled = false,
+          -- enabled = true,
+          enabled = false,
         },
       })
       -- vim.cmd("colorscheme solarized")
@@ -24,7 +22,7 @@ return {
         dark_variant = "main", -- main, moon, or dawn
         styles = {
           bold = true,
-          italic = false,
+          italic = true,
           -- transparency = true,
         },
       })
@@ -43,12 +41,13 @@ return {
           comments = true,
           operators = false,
           folds = true,
+          keywords = true,
         },
-        -- contrast = "hard", -- can be "hard", "soft" or empty string
-        -- transparent_mode = true,
+        contrast = "", -- can be "hard", "soft" or empty string
+        transparent_mode = true,
       })
 
-      -- vim.cmd("colorscheme gruvbox")
+      vim.cmd("colorscheme gruvbox")
     end,
   },
   {
@@ -56,7 +55,7 @@ return {
     name = "catppuccin",
     priority = 1000,
     config = function()
-      -- vim.cmd("colorscheme catppuccin")
+      -- vim.cmd("colorscheme catppuccin-mocha")
     end
   },
   {
@@ -66,22 +65,9 @@ return {
     config = function()
       require("tokyonight").setup({
         style = "night",
-        -- transparent = "true"
+        transparent = "true"
       })
       -- vim.cmd("colorscheme tokyonight")
-    end,
-  },
-
-  {
-    'projekt0n/github-nvim-theme',
-    name = 'github-theme',
-    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      require('github-theme').setup({
-        -- ...
-      })
-      -- vim.cmd('colorscheme github_dark_default')
     end,
   }
 }

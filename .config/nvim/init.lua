@@ -1,7 +1,6 @@
 require("config.options")
-require("config.keymaps")
 require("config.autocmds")
-require("config.colors")
+require("config.keymaps")
 require("config.lazy")
 
 local function set_background_from_macos()

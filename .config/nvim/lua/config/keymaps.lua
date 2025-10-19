@@ -10,9 +10,14 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
+-- vim.keymap.set('n', '<C-p>', ":Files<CR>", { silent = true })
+-- vim.keymap.set('n', '<leader>fg', ":Rg<CR>", { silent = true })
+-- vim.keymap.set('n', '<leader><leader>', "Buffers<CR>", { silent = true })
+
 -- LSP Keymaps
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
+vim.keymap.set('n', '<leader>df', vim.lsp.buf.document_symbol, { desc = '[D]efinitions on document' })
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
