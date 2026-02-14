@@ -1,6 +1,8 @@
 require("lsp.lua_ls")
 require("lsp.ts_ls")
 require("lsp.rust_analyzer")
+require("lsp.gopls")
+require("lsp.python")
 
 local lsp = vim.lsp
 
