@@ -11,6 +11,7 @@ require("gruvbox").setup({
 })
 
 vim.cmd("colorscheme gruvbox")
+vim.opt.bg="dark"
 
 vim.cmd("hi statusline guibg=NONE")
 vim.cmd("hi NormalFloat guibg=NONE")

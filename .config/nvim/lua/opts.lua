@@ -1,5 +1,6 @@
 vim.opt.showmode = true
 vim.opt.guicursor = ""
+vim.opt.cursorline = true
 vim.o.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -13,6 +14,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.winborder = "rounded"
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 vim.g.mapleader = " "
 vim.g.netrw_browse_split = 0

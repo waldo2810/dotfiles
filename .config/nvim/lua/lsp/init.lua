@@ -59,13 +59,14 @@ local function lsp_attach_callback(event)
     vim.keymap.set("v", "<leader>ff", format_selected)
     vim.keymap.set("n", "<leader>K", lsp.buf.hover)
     vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float(nil, {}) end)
-    vim.keymap.set("n", "<leader>tt", function() vim.diagnostic.get(nil) end) -- does not work
     vim.keymap.set("n", "<leader>rn", lsp.buf.rename)
     vim.keymap.set("n", "<leader>ca", lsp.buf.code_action)
-    vim.keymap.set("n", "<leader>df", lsp.buf.document_symbol)
-    vim.keymap.set("n", "gd", goto_definition_filtered)
-    vim.keymap.set("n", "gi", lsp.buf.implementation)
-    vim.keymap.set("n", "gr", lsp.buf.references)
+    vim.keymap.set("n", "gD", lsp.buf.declaration)
+    vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help)
+    -- vim.keymap.set("n", "<leader>df", lsp.buf.document_symbol) -- moved to telescope
+    -- vim.keymap.set("n", "gd", goto_definition_filtered) -- moved to telescope
+    -- vim.keymap.set("n", "gi", lsp.buf.implementation) -- moved to telescope
+    -- vim.keymap.set("n", "gr", lsp.buf.references) -- moved to telescope
 
     if not notified_clients[client.config.name] then
         vim.notify(string.format("✓ LSP ready: %s %s", client.config.name, vim.inspect(client.config.cmd)))

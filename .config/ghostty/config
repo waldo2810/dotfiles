@@ -1,46 +1,37 @@
+theme=light:Gruvbox Light,dark:Gruvbox Dark
+# theme=light:Builtin Solarized Light,dark:Builtin Solarized Dark
 # theme=TokyoNight
 # theme=Rose Pine
-# theme=Gruvbox Dark Hard
-theme=Catppuccin Mocha
-# theme=light:iTerm2 Solarized Light,dark:iTerm2 Solarized Dark
+# theme=Catppuccin Mocha
 # theme=iTerm2 Solarized Dark
 # theme=light:iTerm2 Light Background,dark:iTerm2 Default
 # theme=iTerm2 Default
 # theme=light:Builtin Tango Light,dark:Builtin Tango Dark
 # theme=light:Github,dark:GitHub Dark
 # theme=Kanagawa Dragon
-# theme=iTerm2 Default
 
-# font-family=Fira Code Nerd Font Mono
+# adjust-cell-height=50%
 
+font-family=FiraMono Nerd Font
 # font-family=ZedMono Nerd Font Mono
-
 # font-family=Iosevka Nerd Font Mono
-
 # font-family=Monaco
-
-font-family=SF Mono
-
+# font-family=SF Mono
 # font-family=Menlo
-
 # font-family=GeistMono Nerd Font
-
 # font-family=DankMono Nerd Font
-
 # font-family=Google Sans Code
-
 # font-family=Ioskeley Mono
 
 # font-family=UbuntuMono Nerd Font Mono
 # font-size=16
-
 # adjust-cell-height=10%
 
 cursor-style=block
 cursor-style-blink=false
 
-# background-opacity=0.95
-# background-blur=20
+background-opacity=0.95
+background-blur=20
 
 # gtk-adwaita=true
 # gtk-titlebar=false
@@ -48,8 +39,8 @@ cursor-style-blink=false
 # window-theme=ghostty
 # window-padding-x=3
 # window-padding-y=2
-# window-width=200
-# window-height=50
+window-width=155
+window-height=50
 
 confirm-close-surface=false
 
