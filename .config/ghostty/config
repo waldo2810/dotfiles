@@ -1,8 +1,8 @@
-theme=light:Gruvbox Light,dark:Gruvbox Dark
+# theme=light:Gruvbox Light,dark:Gruvbox Dark
 # theme=light:Builtin Solarized Light,dark:Builtin Solarized Dark
 # theme=TokyoNight
 # theme=Rose Pine
-# theme=Catppuccin Mocha
+theme=Catppuccin Mocha
 # theme=iTerm2 Solarized Dark
 # theme=light:iTerm2 Light Background,dark:iTerm2 Default
 # theme=iTerm2 Default
@@ -12,7 +12,7 @@ theme=light:Gruvbox Light,dark:Gruvbox Dark
 
 # adjust-cell-height=50%
 
-font-family=FiraMono Nerd Font
+# font-family=FiraMono Nerd Font
 # font-family=ZedMono Nerd Font Mono
 # font-family=Iosevka Nerd Font Mono
 # font-family=Monaco
@@ -23,14 +23,14 @@ font-family=FiraMono Nerd Font
 # font-family=Google Sans Code
 # font-family=Ioskeley Mono
 
-# font-family=UbuntuMono Nerd Font Mono
-# font-size=16
-# adjust-cell-height=10%
+font-family=UbuntuMono Nerd Font Mono
+font-size=16
+adjust-cell-height=10%
 
 cursor-style=block
 cursor-style-blink=false
 
-background-opacity=0.95
+background-opacity=0.90
 background-blur=20
 
 # gtk-adwaita=true

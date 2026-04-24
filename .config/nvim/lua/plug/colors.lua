@@ -10,7 +10,19 @@ require("gruvbox").setup({
     }
 })
 
-vim.cmd("colorscheme gruvbox")
+require("catppuccin").setup({
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    transparent_background = true,
+    float = {
+        transparent = true,
+    },
+    term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
+    no_italic = false,
+    no_bold = false,
+    no_underline = false,
+})
+
+vim.cmd("colorscheme catppuccin")
 vim.opt.bg="dark"
 
 vim.cmd("hi statusline guibg=NONE")

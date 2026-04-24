@@ -22,6 +22,7 @@ setup_mini()
 local add = MiniDeps.add
 
 add({ source = "ellisonleao/gruvbox.nvim" })
+add({ source = "catppuccin/nvim", name="catppuccin"})
 add({ source = "theprimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } })
 -- add({ source = "junegunn/fzf" })
 -- add({ source = "junegunn/fzf.vim" })
