@@ -21,23 +21,20 @@ setup_mini()
 
 local add = MiniDeps.add
 
+-- add({ source = "mfussenegger/nvim-jdtls" })
+-- add({ source = "mfussenegger/nvim-dap", depends = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio" } })
+-- add({ source = "mfussenegger/nvim-dap", depends = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio" } })
 add({ source = "ellisonleao/gruvbox.nvim" })
 add({ source = "catppuccin/nvim", name="catppuccin"})
 add({ source = "theprimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } })
--- add({ source = "junegunn/fzf" })
--- add({ source = "junegunn/fzf.vim" })
 add({ source = "stevearc/oil.nvim" })
 add({ source = "hrsh7th/nvim-cmp" })
 add({ source = "hrsh7th/cmp-nvim-lsp" })
 add({ source = "tpope/vim-fugitive" })
 add({ source = "tpope/vim-sleuth" })
 add({ source = "mbbill/undotree" })
--- add({ source = "mfussenegger/nvim-jdtls" })
--- add({ source = "mfussenegger/nvim-dap", depends = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio" } })
--- add({ source = "mfussenegger/nvim-dap", depends = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio" } })
 add({ source = "nvim-treesitter/nvim-treesitter", hooks = { post_checkout = function() vim.cmd('TSUpdate') end } })
 add({ source = "maxmx03/solarized.nvim" })
--- add({ source = "ThePrimeagen/99" })
 add({ source = "nvim-tree/nvim-tree.lua" })
 add({
     source = 'nvim-telescope/telescope-fzf-native.nvim',
@@ -53,10 +50,11 @@ add({
         "nvim-telescope/telescope-fzf-native.nvim"
     }
 })
+add({source = "github/copilot.vim"})
 
 require("plug.colors")
 require("plug.harpoon")
 require("plug.navigate")
 require("plug.edit")
+require("plug.ai")
 -- require("plug.debug")
--- require("plug.ai")
