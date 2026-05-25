@@ -1,5 +1,6 @@
 local treesitter = require("nvim-treesitter.configs")
 local cmp = require("cmp")
+local trouble = require("trouble")
 
 treesitter.setup({
     highlight = { enable = true }
@@ -24,6 +25,9 @@ cmp.setup({
     },
 })
 
+trouble.setup({})
+
 vim.g.undotree_SetFocusWhenToggle = 1
 
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
+vim.keymap.set("n", "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>")

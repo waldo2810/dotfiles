@@ -1,14 +1,15 @@
-# theme=light:Gruvbox Light,dark:Gruvbox Dark
+theme=Gruvbox Dark
 # theme=light:Builtin Solarized Light,dark:Builtin Solarized Dark
 # theme=TokyoNight
 # theme=Rose Pine
-theme=Catppuccin Macchiato
+# theme=Catppuccin Macchiato
 # theme=iTerm2 Solarized Dark
 # theme=light:iTerm2 Light Background,dark:iTerm2 Default
 # theme=iTerm2 Default
 # theme=light:Builtin Tango Light,dark:Builtin Tango Dark
 # theme=light:Github,dark:GitHub Dark
 # theme=Kanagawa Dragon
+# theme=Cobalt2
 
 # adjust-cell-height=50%
 
@@ -16,7 +17,7 @@ theme=Catppuccin Macchiato
 # font-family=ZedMono Nerd Font Mono
 # font-family=Iosevka Nerd Font Mono
 # font-family=Monaco
-font-family=SF Mono
+# font-family=SF Mono
 # font-family=Menlo
 # font-family=GeistMono Nerd Font
 # font-family=DankMono Nerd Font
@@ -27,7 +28,7 @@ font-family=SF Mono
 # font-size=16
 # adjust-cell-height=10%
 
-adjust-cell-height=30%
+# adjust-cell-height=30%
 
 cursor-style=block
 cursor-style-blink=false

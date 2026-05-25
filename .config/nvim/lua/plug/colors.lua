@@ -22,7 +22,8 @@ require("catppuccin").setup({
     no_underline = false,
 })
 
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme gruvbox")
+-- require('colorbuddy').colorscheme('cobalt2')
 vim.opt.bg="dark"
 
 vim.cmd("hi statusline guibg=NONE")

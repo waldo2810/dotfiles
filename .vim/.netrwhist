@@ -1,3 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
-let g:netrw_dirhist_1='/Users/wasabi'
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/wasabi/Developer/andes/openfinance/testdata'
+let g:netrw_dirhist_7='/Users/wasabi/Developer/andes/openfinance'
+let g:netrw_dirhist_6='/Users/wasabi/Developer/andes/openfinance/openfinance-co'
+let g:netrw_dirhist_5='/Users/wasabi/Developer/andes/openfinance/openfinance-co/tls'
+let g:netrw_dirhist_4='/Users/wasabi/Developer/andes/openfinance/openfinance-co'
+let g:netrw_dirhist_3='/Users/wasabi/Developer/andes/openfinance'
+let g:netrw_dirhist_2='/Users/wasabi/Developer/andes/openfinance/openfinance-co'
+let g:netrw_dirhist_1='/Users/wasabi/Developer/andes/openfinance/openfinance-co/directory'
+let g:netrw_dirhist_0='/Users/wasabi/Developer/andes/openfinance/openfinance-co'
+let g:netrw_dirhist_9='/Users/wasabi/Developer/andes/openfinance/openfinance-co/tls'

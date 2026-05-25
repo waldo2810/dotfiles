@@ -25,7 +25,8 @@ local add = MiniDeps.add
 -- add({ source = "mfussenegger/nvim-dap", depends = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio" } })
 -- add({ source = "mfussenegger/nvim-dap", depends = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio" } })
 add({ source = "ellisonleao/gruvbox.nvim" })
-add({ source = "catppuccin/nvim", name="catppuccin"})
+add({ source = "catppuccin/nvim", name = "catppuccin" })
+add({ source = "lalitmee/cobalt2.nvim", depends = { "tjdevries/colorbuddy.nvim" }, checkout = "v1.0.0" })
 add({ source = "theprimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } })
 add({ source = "stevearc/oil.nvim" })
 add({ source = "hrsh7th/nvim-cmp" })
@@ -50,7 +51,8 @@ add({
         "nvim-telescope/telescope-fzf-native.nvim"
     }
 })
-add({source = "github/copilot.vim"})
+add({ source = "github/copilot.vim" })
+add({ source = "folke/trouble.nvim" })
 
 require("plug.colors")
 require("plug.harpoon")

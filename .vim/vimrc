@@ -1,28 +1,27 @@
 " ----------------------- Options
 let mapleader = " "
 
-set clipboard=unnamedplus
+set showmode
+set guicursor=
+set cursorline
+set termguicolors
 set number
 set relativenumber
 set nowrap
-set ttyfast
-
-set nobackup
-set noswapfile
-set nowritebackup
-
-set hlsearch
-set incsearch
-
-set autoindent
-set expandtab
-set tabstop=4
+set signcolumn=yes
 set softtabstop=4
 set shiftwidth=4
-
-set smartindent
-set smarttab
+set expandtab
 set scrolloff=10
+set clipboard=unnamedplus
+set list
+set listchars=tab:»\ ,trail:·,nbsp:␣
+set splitbelow
+set splitright
+
+let g:netrw_browse_split = 0
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
 
 " ----------------------- Plugins
 call plug#begin()
