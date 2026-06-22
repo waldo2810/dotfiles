@@ -53,9 +53,9 @@ local config = {
     -- sort = {
     --     sorter = "case_sensitive",
     -- },
-    -- view = {
-    --     width = 30,
-    -- },
+    view = {
+        width = 40,
+    },
     renderer = {
         icons = {
             glyphs = {

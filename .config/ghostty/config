@@ -24,11 +24,9 @@ theme=Gruvbox Dark
 # font-family=Google Sans Code
 # font-family=Ioskeley Mono
 
-# font-family=UbuntuMono Nerd Font Mono
-# font-size=16
-# adjust-cell-height=10%
-
-# adjust-cell-height=30%
+font-family=UbuntuMono Nerd Font Mono
+font-size=14
+adjust-cell-height=40%
 
 cursor-style=block
 cursor-style-blink=false
