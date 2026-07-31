@@ -16,7 +16,7 @@ theme=Gruvbox Dark
 # font-family=FiraMono Nerd Font
 # font-family=ZedMono Nerd Font Mono
 # font-family=Iosevka Nerd Font Mono
-# font-family=Monaco
+font-family=Monaco
 # font-family=SF Mono
 # font-family=Menlo
 # font-family=GeistMono Nerd Font
@@ -24,8 +24,8 @@ theme=Gruvbox Dark
 # font-family=Google Sans Code
 # font-family=Ioskeley Mono
 
-font-family=UbuntuMono Nerd Font Mono
-font-size=14
+# font-family=UbuntuMono Nerd Font Mono
+# font-size=14
 adjust-cell-height=40%
 
 cursor-style=block
@@ -40,8 +40,8 @@ cursor-style-blink=false
 # window-theme=ghostty
 # window-padding-x=3
 # window-padding-y=2
-window-width=155
-window-height=50
+# window-width=155
+# window-height=50
 
 confirm-close-surface=false
 
