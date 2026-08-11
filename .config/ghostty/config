@@ -1,4 +1,4 @@
-theme=Gruvbox Dark
+# theme=Gruvbox Dark
 # theme=light:Builtin Solarized Light,dark:Builtin Solarized Dark
 # theme=TokyoNight
 # theme=Rose Pine
@@ -16,8 +16,8 @@ theme=Gruvbox Dark
 # font-family=FiraMono Nerd Font
 # font-family=ZedMono Nerd Font Mono
 # font-family=Iosevka Nerd Font Mono
-font-family=Monaco
-# font-family=SF Mono
+# font-family=Monaco
+font-family=SF Mono
 # font-family=Menlo
 # font-family=GeistMono Nerd Font
 # font-family=DankMono Nerd Font
@@ -26,7 +26,7 @@ font-family=Monaco
 
 # font-family=UbuntuMono Nerd Font Mono
 # font-size=14
-adjust-cell-height=40%
+# adjust-cell-height=40%
 
 cursor-style=block
 cursor-style-blink=false
