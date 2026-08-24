@@ -27,6 +27,12 @@ cmp.setup({
 
 trouble.setup({})
 
+require("render-markdown").setup({
+    sign = { enabled = false },
+    heading = { icons = {} },
+    code = { style = "normal" },
+})
+
 vim.g.undotree_SetFocusWhenToggle = 1
 
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")

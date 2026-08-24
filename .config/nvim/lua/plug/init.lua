@@ -53,6 +53,10 @@ add({
 })
 add({ source = "github/copilot.vim" })
 add({ source = "folke/trouble.nvim" })
+add({ source = "MeanderingProgrammer/render-markdown.nvim", depends = { "nvim-treesitter/nvim-treesitter" } })
+
+vim.cmd("set rtp+=~/Developer/slides")
+require("slides").setup({})
 
 require("plug.colors")
 require("plug.harpoon")
