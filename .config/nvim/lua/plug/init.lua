@@ -26,7 +26,7 @@ local add = MiniDeps.add
 -- add({ source = "mfussenegger/nvim-dap", depends = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio" } })
 add({ source = "ellisonleao/gruvbox.nvim" })
 add({ source = "catppuccin/nvim", name = "catppuccin" })
-add({ source = "lalitmee/cobalt2.nvim", depends = { "tjdevries/colorbuddy.nvim" }, checkout = "v1.0.0" })
+add({ source = "rose-pine/neovim", name = "rose-pine" })
 add({ source = "theprimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } })
 add({ source = "stevearc/oil.nvim" })
 add({ source = "hrsh7th/nvim-cmp" })
