@@ -34,7 +34,7 @@ add({ source = "hrsh7th/cmp-nvim-lsp" })
 add({ source = "tpope/vim-fugitive" })
 add({ source = "tpope/vim-sleuth" })
 add({ source = "mbbill/undotree" })
-add({ source = "nvim-treesitter/nvim-treesitter", hooks = { post_checkout = function() vim.cmd('TSUpdate') end } })
+add({ source = "nvim-treesitter/nvim-treesitter", checkout = "main", hooks = { post_checkout = function() vim.cmd('TSUpdate') end } })
 add({ source = "maxmx03/solarized.nvim" })
 add({ source = "nvim-tree/nvim-tree.lua" })
 add({

@@ -1,9 +1,15 @@
-local treesitter = require("nvim-treesitter.configs")
 local cmp = require("cmp")
 local trouble = require("trouble")
 
-treesitter.setup({
-    highlight = { enable = true }
+require("nvim-treesitter").setup({})
+
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function()
+        local ok, parser = pcall(vim.treesitter.get_parser, 0)
+        if ok and parser then
+            vim.treesitter.start()
+        end
+    end,
 })
 
 cmp.setup({
