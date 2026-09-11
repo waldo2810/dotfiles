@@ -1,13 +1,13 @@
 # theme=Gruvbox Dark
 # theme=light:Builtin Solarized Light,dark:Builtin Solarized Dark
 # theme=TokyoNight
-theme=Rose Pine
+# theme=Rose Pine
 # theme=Catppuccin Macchiato
 # theme=iTerm2 Solarized Dark
 # theme=light:iTerm2 Light Background,dark:iTerm2 Default
 # theme=iTerm2 Default
 # theme=light:Builtin Tango Light,dark:Builtin Tango Dark
-# theme=light:Github,dark:GitHub Dark
+theme=light:Github,dark:GitHub Dark
 # theme=Kanagawa Dragon
 # theme=Cobalt2
 
@@ -20,8 +20,8 @@ theme=Rose Pine
 # font-family=SF Mono
 # font-family=Menlo
 # font-family=GeistMono Nerd Font
-font-family=DankMono Nerd Font
-# font-family=Google Sans Code
+# font-family=DankMono Nerd Font
+font-family=Google Sans Code
 # font-family=Ioskeley Mono
 
 # font-family=UbuntuMono Nerd Font Mono

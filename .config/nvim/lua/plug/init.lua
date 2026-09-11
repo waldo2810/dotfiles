@@ -27,6 +27,7 @@ local add = MiniDeps.add
 add({ source = "ellisonleao/gruvbox.nvim" })
 add({ source = "catppuccin/nvim", name = "catppuccin" })
 add({ source = "rose-pine/neovim", name = "rose-pine" })
+add({ source = "projekt0n/github-nvim-theme" })
 add({ source = "theprimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } })
 add({ source = "stevearc/oil.nvim" })
 add({ source = "hrsh7th/nvim-cmp" })
@@ -51,7 +52,7 @@ add({
         "nvim-telescope/telescope-fzf-native.nvim"
     }
 })
-add({ source = "github/copilot.vim" })
+-- add({ source = "github/copilot.vim" })
 add({ source = "folke/trouble.nvim" })
 add({ source = "MeanderingProgrammer/render-markdown.nvim", depends = { "nvim-treesitter/nvim-treesitter" } })
 

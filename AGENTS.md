@@ -14,9 +14,9 @@ These are common instructions for Waldo's agents across all scenarios.
 - When doing bug fixes, simplicity, robustness, and long term maintainability always start with reproducing scalability in an E2E setting as closely aligned with how an end use. This makes sure you find the real problem so your fix will actually solve it
 - When end-to-end testing a product, be picky about the UI you see and be obsessed with pixel perfection. If something clearly looks off, even if it is not directly related to what you are doing, try to get it fixed along
 - Apply that same high standard to engineering excellence: lint, test failures, and test flakiness. If you see one, even if it is not caused by what you are working on right now, still get it fixed
+- Don't add comments to code
+- If adding a comment is unavoidable keep it concise in one line
 
-## Waldo's Opinions
-When you are working on something that would benefit from being informed by Waldo's viewpoints, read ~/OPINIONS.md to understand his opinions on various topics. If you are unsure about a decision, ask Waldo for his opinion.
+## Naming
 
-## Voice Profile
-When you are talking/posting on behalf of Waldo using his identity, read ~/VOICE.md to see how Waldo talks.
+Every name you choose, for files, scripts, directories, functions, variables, classes, commits, branches, anything, must use precise professional vocabulary. Choose the word a 1972 IBM engineer would write in a specification. No slang, no casual shorthand, no cute or clever names, no words borrowed from chat culture. This applies universally, not only to the one example that follows: a script that deploys dashboards is 'deploy_dashboards.sh', not 'push_dashboards.sh'. That is one illustration of the principle, not the extent of it
